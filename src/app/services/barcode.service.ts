@@ -1,0 +1,1 @@
+// Zara-style API mocking and barcode scanning
