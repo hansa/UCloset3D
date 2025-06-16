@@ -1,4 +1,5 @@
 <div class="avatar-container" *ngIf="avatarUrl">
   <img [src]="avatarUrl" alt="Avatar" />
 </div>
-<div *ngIf="!avatarUrl">Loading avatar...</div>
+<div class="error" *ngIf="error">{{ error }}</div>
+<div *ngIf="!avatarUrl && !error">Loading avatar...</div>

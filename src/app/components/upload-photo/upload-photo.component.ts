@@ -9,6 +9,7 @@ import { RemoveBgService } from '../../services/removebg.service';
 export class UploadPhotoComponent {
   selectedFile?: File;
   processedUrl?: string;
+  error?: string;
 
   constructor(private removeBgService: RemoveBgService) {}
 
@@ -21,7 +22,15 @@ export class UploadPhotoComponent {
   }
 
   async removeBackground() {
-    if (!this.selectedFile) return;
-    this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+    if (!this.selectedFile) {
+      this.error = 'Please select a file first.';
+      return;
+    }
+    try {
+      this.error = undefined;
+      this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+    } catch (err) {
+      this.error = 'Failed to process image.';
+    }
   }
 }

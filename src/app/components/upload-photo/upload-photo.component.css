@@ -1,2 +1,18 @@
-button { margin-left: 0.5rem; }
-img { max-width: 200px; display: block; margin-top: 1rem; }
+.upload-form {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-left: 0.5rem;
+}
+
+img {
+  max-width: 200px;
+  display: block;
+  margin-top: 1rem;
+}
+
+.error {
+  color: #c00;
+  margin-top: 0.5rem;
+}
