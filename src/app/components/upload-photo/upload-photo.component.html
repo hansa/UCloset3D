@@ -1,0 +1,5 @@
+<input type="file" (change)="onFileSelected($event)" />
+<button (click)="removeBackground()" [disabled]="!selectedFile">Process</button>
+<div *ngIf="processedUrl">
+  <img [src]="processedUrl" alt="Processed" />
+</div>
