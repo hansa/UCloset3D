@@ -18,4 +18,6 @@ This is a demo Angular application for experimenting with a virtual closet exper
    ```
 
 Deploying to Firebase requires a valid Firebase project configuration.
+
 Ensure `firebase.json` has `"public": "dist/ucloset3d"` to match the Angular build output.
+
