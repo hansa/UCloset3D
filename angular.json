@@ -10,6 +10,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/ucloset3d",
             "index": "src/index.html",
@@ -22,6 +23,7 @@
           }
         },
         "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ucloset3d:build"
           }
