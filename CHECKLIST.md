@@ -9,3 +9,5 @@
 - [x] Firebase configuration rewrites all routes to index.html
 - [x] Service worker enabled for PWA
 - [x] Body measurements stored after upload
+- [x] Drag-and-drop highlights avatar drop zone
+- [x] Responsive styling for forms and navigation

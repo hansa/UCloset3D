@@ -13,6 +13,7 @@ export class AvatarViewComponent implements OnInit {
   topUrl?: string;
   bottomUrl?: string;
   shoesUrl?: string;
+  dragging = false;
 
   constructor(private avatarService: AvatarService) {}
 
@@ -37,8 +38,19 @@ export class AvatarViewComponent implements OnInit {
     ev.preventDefault();
   }
 
+  dragEnter(ev: DragEvent): void {
+    ev.preventDefault();
+    this.dragging = true;
+  }
+
+  dragLeave(ev: DragEvent): void {
+    ev.preventDefault();
+    this.dragging = false;
+  }
+
   onDrop(ev: DragEvent): void {
     ev.preventDefault();
+    this.dragging = false;
     const data = ev.dataTransfer?.getData('text/plain');
     if (!data) { return; }
     const item = JSON.parse(data);
