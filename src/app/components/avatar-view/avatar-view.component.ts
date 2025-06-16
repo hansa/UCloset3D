@@ -8,6 +8,7 @@ import { AvatarService } from '../../services/avatar.service';
 })
 export class AvatarViewComponent implements OnInit {
   avatarUrl: string | null = null;
+  error?: string;
 
   constructor(private avatarService: AvatarService) {}
 
@@ -16,6 +17,11 @@ export class AvatarViewComponent implements OnInit {
   }
 
   async loadAvatar(): Promise<void> {
-    this.avatarUrl = await this.avatarService.getAvatarUrl();
+    try {
+      this.error = undefined;
+      this.avatarUrl = await this.avatarService.getAvatarUrl();
+    } catch {
+      this.error = 'Failed to load avatar.';
+    }
   }
 }

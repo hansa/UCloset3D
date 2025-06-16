@@ -1,2 +1,3 @@
 .avatar-container { text-align: center; }
 .avatar-container img { max-width: 200px; }
+.error { color: #c00; text-align: center; margin-top: 1rem; }
