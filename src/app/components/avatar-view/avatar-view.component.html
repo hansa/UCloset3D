@@ -1,0 +1,4 @@
+<div class="avatar-container" *ngIf="avatarUrl">
+  <img [src]="avatarUrl" alt="Avatar" />
+</div>
+<div *ngIf="!avatarUrl">Loading avatar...</div>
