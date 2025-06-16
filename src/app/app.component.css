@@ -1,1 +1,25 @@
-h1 { text-align: center; margin: 1rem 0; }
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+header {
+  background-color: #324851;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
+}

@@ -1,4 +1,11 @@
-<h1>{{ title }}</h1>
-<app-upload-photo></app-upload-photo>
-<app-avatar-view></app-avatar-view>
-<app-mix-match></app-mix-match>
+<header>
+  <h1>{{ title }}</h1>
+  <nav>
+    <a routerLink="/upload" routerLinkActive="active">Upload Photo</a>
+    <a routerLink="/avatar" routerLinkActive="active">Avatar View</a>
+    <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

@@ -19,7 +19,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           }
         },
         "serve": {
@@ -30,6 +32,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ucloset3d"
+  }
 }

@@ -1,3 +1,12 @@
-<ul>
+<ul *ngIf="outfits.length; else empty">
   <li *ngFor="let item of outfits">{{ item }}</li>
 </ul>
+<div class="wardrobe" *ngIf="wardrobe.length">
+  <h3>Your Wardrobe</h3>
+  <img *ngFor="let w of wardrobe" [src]="w.url" [alt]="w.category" draggable="true"
+       (dragstart)="onDragStart($event, w)" />
+</div>
+<ng-template #empty>
+  <p *ngIf="error" class="error">{{ error }}</p>
+  <p *ngIf="!error">No outfits available.</p>
+</ng-template>

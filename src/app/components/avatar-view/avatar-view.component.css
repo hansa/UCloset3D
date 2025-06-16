@@ -1,2 +1,10 @@
-.avatar-container { text-align: center; }
-.avatar-container img { max-width: 200px; }
+.avatar-wrapper { position: relative; text-align: center; display: inline-block; }
+.avatar-wrapper img.base { width: 200px; }
+.avatar-wrapper img.top,
+.avatar-wrapper img.bottom,
+.avatar-wrapper img.shoes { position: absolute; left: 50%; transform: translateX(-50%); width: 200px; pointer-events: none; }
+.avatar-wrapper img.top { top: 0; }
+.avatar-wrapper img.bottom { top: 100px; }
+.avatar-wrapper img.shoes { top: 170px; }
+.error { color: #c00; text-align: center; margin-top: 1rem; }
+.loading { text-align: center; margin-top: 1rem; color: #555; }
