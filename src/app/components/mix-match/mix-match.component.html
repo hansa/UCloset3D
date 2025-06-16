@@ -1,5 +1,8 @@
-<ul *ngIf="outfits.length; else empty">
-  <li *ngFor="let item of outfits">{{ item }}</li>
+<ul class="outfits" *ngIf="outfits.length; else empty">
+  <li *ngFor="let item of outfits">
+    <img [src]="item.image" [alt]="item.title" />
+    <span>{{ item.title }}</span>
+  </li>
 </ul>
 <div class="wardrobe" *ngIf="wardrobe.length">
   <h3>Your Wardrobe</h3>

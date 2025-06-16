@@ -6,6 +6,7 @@
   <button (click)="removeBackground()" [disabled]="!selectedFile || loading">Process</button>
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>
+<div class="success" *ngIf="success">{{ success }}</div>
 <div *ngIf="loading" class="loading">Processing...</div>
 <div *ngIf="processedUrl">
   <img [src]="processedUrl" alt="Processed" />

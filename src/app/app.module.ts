@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { AvatarViewComponent } from './components/avatar-view/avatar-view.component';
 import { UploadPhotoComponent } from './components/upload-photo/upload-photo.component';
 import { MixMatchComponent } from './components/mix-match/mix-match.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AvatarViewComponent,
     UploadPhotoComponent,
-    MixMatchComponent
+    MixMatchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

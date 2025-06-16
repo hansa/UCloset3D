@@ -6,9 +6,9 @@ import { firstValueFrom } from 'rxjs';
 export class OutfitService {
   constructor(private http: HttpClient) {}
 
-  async getOutfits(): Promise<string[]> {
+  async getOutfits(): Promise<{ title: string; image: string }[]> {
     const url = 'https://fakestoreapi.com/products/category/men\'s%20clothing';
     const items: any[] = await firstValueFrom(this.http.get<any[]>(url));
-    return items.slice(0, 4).map(i => i.title);
+    return items.slice(0, 4).map(i => ({ title: i.title, image: i.image }));
   }
 }

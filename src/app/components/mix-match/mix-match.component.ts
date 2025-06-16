@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { OutfitService } from '../../services/outfit.service';
 
+export interface OutfitItem { title: string; image: string; }
+
 @Component({
   selector: 'app-mix-match',
   templateUrl: './mix-match.component.html',
   styleUrls: ['./mix-match.component.css']
 })
+
 export class MixMatchComponent implements OnInit {
-  outfits: string[] = [];
+  outfits: OutfitItem[] = [];
   error?: string;
   wardrobe: { url: string; category: string }[] = [];
 

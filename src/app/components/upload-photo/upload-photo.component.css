@@ -24,6 +24,11 @@ img {
   margin-top: 0.5rem;
 }
 
+.success {
+  color: #080;
+  margin-top: 0.5rem;
+}
+
 .loading {
   margin-top: 0.5rem;
   color: #555;

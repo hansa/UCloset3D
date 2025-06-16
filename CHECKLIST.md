@@ -11,3 +11,6 @@
 - [x] Body measurements stored after upload
 - [x] Drag-and-drop highlights avatar drop zone
 - [x] Responsive styling for forms and navigation
+- [x] Landing page explains workflow
+- [x] Mix & Match shows outfit images
+- [x] Success message after upload

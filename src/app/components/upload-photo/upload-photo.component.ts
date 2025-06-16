@@ -11,6 +11,7 @@ export class UploadPhotoComponent {
   selectedFile?: File;
   processedUrl?: string;
   error?: string;
+  success?: string;
   loading = false;
 
   category = 'top';
@@ -38,6 +39,7 @@ export class UploadPhotoComponent {
     }
     try {
       this.error = undefined;
+      this.success = undefined;
       this.loading = true;
       this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
       try {
@@ -50,6 +52,7 @@ export class UploadPhotoComponent {
         const items = JSON.parse(localStorage.getItem('wardrobe') || '[]');
         items.push({ url: this.processedUrl, category: this.category });
         localStorage.setItem('wardrobe', JSON.stringify(items));
+        this.success = 'Image processed and saved to wardrobe.';
       }
     } catch {
       this.error = 'Failed to process image.';
