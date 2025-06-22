@@ -17,6 +17,6 @@ export class AvatarPreviewComponent {
   }
 
   next(): void {
-    this.router.navigate(['/avatar']);
+    this.router.navigate(['/upload-outfits']);
   }
 }

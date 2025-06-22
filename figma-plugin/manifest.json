@@ -1,0 +1,7 @@
+{
+  "name": "UCloset3D UX Generator",
+  "id": "ucloset3d-ux-plugin",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}
