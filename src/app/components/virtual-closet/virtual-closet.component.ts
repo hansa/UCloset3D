@@ -5,13 +5,7 @@ import { AvatarService } from '../../services/avatar.service';
 import { FirebaseService } from '../../services/firebase.service';
 import { OutfitGeneratorService } from '../../services/outfit-generator.service';
 import { Router } from '@angular/router';
-
-interface ClosetItem {
-  url: string;
-  category?: string;
-  x: number;
-  y: number;
-}
+import { ClosetItem } from '../../models/closet-item';
 
 
 @Component({
