@@ -8,6 +8,14 @@ export class RemoveBgService {
   constructor(private http: HttpClient) {}
 
   async removeBackground(file: File): Promise<string> {
+    if (
+      !environment.removeBgApiKey ||
+      environment.removeBgApiKey.includes('YOUR_REMOVE_BG_API_KEY')
+    ) {
+      console.warn('Remove.bg API key not configured; returning original image');
+      return URL.createObjectURL(file);
+    }
+
     const formData = new FormData();
     formData.append('image_file', file);
 
@@ -15,13 +23,18 @@ export class RemoveBgService {
       'X-Api-Key': environment.removeBgApiKey
     });
 
-    const response = await firstValueFrom(
-      this.http.post('https://api.remove.bg/v1.0/removebg', formData, {
-        headers,
-        responseType: 'blob'
-      })
-    );
+    try {
+      const response = await firstValueFrom(
+        this.http.post('https://api.remove.bg/v1.0/removebg', formData, {
+          headers,
+          responseType: 'blob'
+        })
+      );
 
-    return URL.createObjectURL(response);
+      return URL.createObjectURL(response);
+    } catch (err) {
+      console.error('Failed to remove background via API', err);
+      return URL.createObjectURL(file);
+    }
   }
 }

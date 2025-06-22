@@ -8,6 +8,18 @@ export class BodyBlockService {
   constructor(private http: HttpClient) {}
 
   async measure(file: File): Promise<any> {
+    if (
+      !environment.bodyBlockApiKey ||
+      environment.bodyBlockApiKey.includes('YOUR_BODYBLOCK_API_KEY')
+    ) {
+      console.warn('BodyBlock API key not configured; returning mock measurements');
+      return {
+        chest: 0,
+        waist: 0,
+        hip: 0
+      };
+    }
+
     const formData = new FormData();
     formData.append('image', file);
 
@@ -15,10 +27,19 @@ export class BodyBlockService {
       'X-Api-Key': environment.bodyBlockApiKey
     });
 
-    return firstValueFrom(
-      this.http.post<any>('https://api.bodyblock.ai/v1/measurements', formData, {
-        headers
-      })
-    );
+    try {
+      return await firstValueFrom(
+        this.http.post<any>('https://api.bodyblock.ai/v1/measurements', formData, {
+          headers
+        })
+      );
+    } catch (err) {
+      console.error('Failed to fetch measurements from BodyBlock', err);
+      return {
+        chest: 0,
+        waist: 0,
+        hip: 0
+      };
+    }
   }
 }
