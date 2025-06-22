@@ -1,0 +1,10 @@
+<div class="animate-form">
+  <input type="file" accept="video/*" (change)="onFileSelected($event)" />
+  <div class="drop-zone" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    Drop video here
+  </div>
+  <button (click)="animate()" [disabled]="!selectedFile || loading">Animate</button>
+</div>
+<div class="loading" *ngIf="loading">Processing...</div>
+<div class="error" *ngIf="error">{{ error }}</div>
+<video *ngIf="animationUrl" [src]="animationUrl" controls></video>

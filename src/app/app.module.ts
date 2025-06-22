@@ -20,6 +20,7 @@ import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-galle
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
+import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FashionChallengeComponent } from './components/fashion-challenge/fashio
     AvatarPreviewComponent,
     AdBannerComponent,
     FashionChallengeComponent,
+    AnimateVideoComponent,
   ],
   imports: [
     BrowserModule,

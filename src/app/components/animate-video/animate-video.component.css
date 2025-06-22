@@ -1,0 +1,19 @@
+.animate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.drop-zone {
+  width: 100%;
+  padding: 2rem;
+  border: 2px dashed #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+.loading {
+  font-style: italic;
+}
+.error {
+  color: red;
+}
