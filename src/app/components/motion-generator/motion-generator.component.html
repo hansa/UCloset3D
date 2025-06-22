@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="motion-form">
+  <label>
+    Prompt
+    <input type="text" formControlName="prompt" />
+  </label>
+  <button type="submit" [disabled]="loading">Generate Motion</button>
+</form>
+<div *ngIf="loading">Submitting...</div>
+<div *ngIf="jobId">Request ID: {{ jobId }}</div>
+<div class="error" *ngIf="error">{{ error }}</div>

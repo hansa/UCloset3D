@@ -64,6 +64,10 @@ export const environment = {
   barcodeApiKey: 'YOUR_BARCODE_API_KEY',
   bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
   openAvatarApiUrl: '',
+  // Optional SayMotion REST API configuration
+  sayMotionBaseUrl: '',
+  sayMotionClientId: '',
+  sayMotionClientSecret: '',
   firebase: {
     apiKey: 'YOUR_FIREBASE_API_KEY',
     authDomain: 'YOUR_FIREBASE_AUTH_DOMAIN',
@@ -87,6 +91,7 @@ The UI provides the following pages:
 3. **Avatar View** – preview the generated avatar.
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
 5. **Virtual Closet** – style an avatar with draggable outfit pieces.
+6. **Motion Generator** – create animations from a text prompt using the SayMotion API.
 
 ## Six-Screen Workflow
 
@@ -95,7 +100,8 @@ The UI provides the following pages:
 3. **Outfit Uploads** – add clothing images with drag-and-drop support and automatically remove the background.
 4. **Virtual Closet** – manage wardrobe items with drag‑and‑drop sorting.
 5. **Mix & Match** – arrange outfits using pieces from the virtual closet.
-6. **Gallery Sharing** – publish completed looks to a shareable gallery page.
+6. **Motion Generator** – convert text prompts into animations.
+7. **Gallery Sharing** – publish completed looks to a shareable gallery page.
 
 ## Development
 

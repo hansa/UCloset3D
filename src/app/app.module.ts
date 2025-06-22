@@ -20,6 +20,7 @@ import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-galle
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
+import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
 
 
@@ -40,6 +41,7 @@ import { AnimateVideoComponent } from './components/animate-video/animate-video.
     AvatarPreviewComponent,
     AdBannerComponent,
     FashionChallengeComponent,
+    MotionGeneratorComponent,
     AnimateVideoComponent,
   ],
   imports: [

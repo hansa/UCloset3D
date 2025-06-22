@@ -6,6 +6,10 @@ export const environment = {
   bodyBlockApiKey: '',
   // URL of the optional open-source avatar API for production builds
   openAvatarApiUrl: '',
+  // Base URL and credentials for the optional SayMotion API integration
+  sayMotionBaseUrl: '',
+  sayMotionClientId: '',
+  sayMotionClientSecret: '',
   deepMotionApiKey: '',
   deepMotionApiUrl: 'https://api.deepmotion.com/animate',
   firebase: {

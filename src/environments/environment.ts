@@ -8,6 +8,10 @@ export const environment = {
   // will generate avatars and measurements locally instead of using paid
   // services like Ready Player Me or BodyBlock.
   openAvatarApiUrl: '',
+  // Base URL and credentials for the optional SayMotion API integration
+  sayMotionBaseUrl: '',
+  sayMotionClientId: '',
+  sayMotionClientSecret: '',
   deepMotionApiKey: 'YOUR_DEEPMOTION_API_KEY',
   deepMotionApiUrl: 'https://api.deepmotion.com/animate',
   firebase: {
