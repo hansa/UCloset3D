@@ -4,11 +4,12 @@ export const environment = {
   removeBgApiKey: '',
   barcodeApiKey: '',
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: ''
+    apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
+    authDomain: "ucloset3d.firebaseapp.com",
+    projectId: "ucloset3d",
+    storageBucket: "ucloset3d.firebasestorage.app",
+    messagingSenderId: "247390912347",
+    appId: "1:247390912347:web:40c90c13c07cdfd126e47e",
+    measurementId: "G-DNJJFTD52J"
   }
 };
