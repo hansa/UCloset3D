@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-upload-outfits',
   templateUrl: './upload-outfits.component.html',
-  styleUrls: ['./upload-outfits.component.css']
+  styleUrls: ['./upload-outfits.component.scss']
 })
 
 export class UploadOutfitsComponent {

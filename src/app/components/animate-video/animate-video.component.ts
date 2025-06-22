@@ -4,7 +4,7 @@ import { DeepMotionService } from '../../services/deepmotion.service';
 @Component({
   selector: 'app-animate-video',
   templateUrl: './animate-video.component.html',
-  styleUrls: ['./animate-video.component.css']
+  styleUrls: ['./animate-video.component.scss']
 })
 export class AnimateVideoComponent {
   selectedFile?: File;

@@ -7,7 +7,7 @@ import { BodyBlockService } from '../../services/bodyblock.service';
 @Component({
   selector: 'app-upload-photo',
   templateUrl: './upload-photo.component.html',
-  styleUrls: ['./upload-photo.component.css']
+  styleUrls: ['./upload-photo.component.scss']
 })
 export class UploadPhotoComponent {
   selectedFile?: File;

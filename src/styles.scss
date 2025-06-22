@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 :root {
-  --primary-color: #337fff;
-  --accent-color: #ff4081;
-  --bg-start: #ffffff;
-  --bg-end: #eef3ff;
+  --primary-color: #ff8b6a;
+  --accent-color: #ffb48f;
+  --bg-start: #fff5f0;
+  --bg-end: #ffe3d6;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));

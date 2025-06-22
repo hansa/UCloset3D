@@ -23,7 +23,7 @@ const LAYER_ORDER: Record<string, number> = {
 @Component({
   selector: 'app-virtual-closet',
   templateUrl: './virtual-closet.component.html',
-  styleUrls: ['./virtual-closet.component.css']
+  styleUrls: ['./virtual-closet.component.scss']
 })
 
 export class VirtualClosetComponent implements OnInit {

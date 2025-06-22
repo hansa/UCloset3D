@@ -1,5 +1,8 @@
 .upload-form {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 button {
@@ -20,4 +23,11 @@ button {
   padding: 1rem;
   text-align: center;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .upload-form {
+    width: 90%;
+    margin: 1rem auto;
+  }
 }
