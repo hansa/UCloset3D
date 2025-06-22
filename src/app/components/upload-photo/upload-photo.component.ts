@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RemoveBgService } from '../../services/removebg.service';
+import { Router } from '@angular/router';
+import { AvatarService } from '../../services/avatar.service';
 
 @Component({
   selector: 'app-upload-photo',
@@ -8,10 +9,13 @@ import { RemoveBgService } from '../../services/removebg.service';
 })
 export class UploadPhotoComponent {
   selectedFile?: File;
-  processedUrl?: string;
   error?: string;
+  loading = false;
 
-  constructor(private removeBgService: RemoveBgService) {}
+  constructor(
+    private avatarService: AvatarService,
+    private router: Router
+  ) {}
 
   onFileSelected(event: Event) {
     const element = event.target as HTMLInputElement;
@@ -21,16 +25,20 @@ export class UploadPhotoComponent {
     }
   }
 
-  async removeBackground() {
+  async generateAvatar() {
     if (!this.selectedFile) {
       this.error = 'Please select a file first.';
       return;
     }
+    this.loading = true;
     try {
       this.error = undefined;
-      this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+      await this.avatarService.createAvatar(this.selectedFile);
+      this.router.navigate(['/avatar']);
     } catch (err) {
-      this.error = 'Failed to process image.';
+      this.error = 'Failed to generate avatar.';
+    } finally {
+      this.loading = false;
     }
   }
 }
