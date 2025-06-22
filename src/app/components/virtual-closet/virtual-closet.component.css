@@ -23,6 +23,8 @@
   position: absolute;
   width: 80px;
   cursor: move;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
 }
 
 .save {
@@ -44,6 +46,8 @@
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
+  background-color: var(--primary-color);
+  padding: 0.5rem 0;
 }
 
 .action-bar button {
@@ -53,4 +57,5 @@
   flex-direction: column;
   align-items: center;
   font-size: 1.2rem;
+  color: #fff;
 }
