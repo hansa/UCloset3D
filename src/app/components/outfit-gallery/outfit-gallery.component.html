@@ -2,8 +2,8 @@
   <div class="card" *ngFor="let outfit of outfits" (click)="onSelect(outfit)">
     <img [src]="outfit.imageUrl" alt="Outfit" />
     <div class="actions" (click)="$event.stopPropagation()">
-      <button (click)="share(outfit)" aria-label="Share">
-        <span class="share-icon">&#x1F4E4;</span>
+      <button (click)="share(outfit)" aria-label="Share on Instagram">
+        <span class="instagram-icon">&#x1F4F7;</span>
       </button>
     </div>
   </div>

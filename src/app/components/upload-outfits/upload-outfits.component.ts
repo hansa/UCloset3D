@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RemoveBgService } from '../../services/removebg.service';
 import { FirebaseService } from '../../services/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload-outfits',
@@ -18,7 +19,8 @@ export class UploadOutfitsComponent {
 
   constructor(
     private removeBgService: RemoveBgService,
-    private firebaseService: FirebaseService
+    private firebaseService: FirebaseService,
+    private router: Router
   ) {}
 
   onFilesSelected(event: Event) {
@@ -51,5 +53,8 @@ export class UploadOutfitsComponent {
       }
     }
     this.isUploading = false;
+    if (!this.error) {
+      this.router.navigate(['/virtual-closet']);
+    }
   }
 }

@@ -8,7 +8,7 @@
   </label>
   <input type="file" multiple (change)="onFilesSelected($event)" />
   <button (click)="uploadAll()" [disabled]="!selectedFiles.length || isUploading">
-    Upload
+    Save
   </button>
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>
