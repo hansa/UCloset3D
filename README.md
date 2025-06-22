@@ -7,6 +7,11 @@ The UI provides four main pages:
 2. **Avatar View** – preview a sample 3D avatar.
 3. **Mix & Match** – list outfit items in a simple mix and match interface.
 4. **Virtual Closet** – style an avatar with draggable outfit pieces.
+The UI provides the following pages:
+1. **Upload Photo** – process an image with background removal.
+2. **Avatar Preview** – display the generated avatar with an option to continue.
+3. **Avatar View** – preview a sample 3D avatar.
+4. **Mix & Match** – list outfit items in a simple mix and match interface.
 
 ## Development
 
