@@ -1,13 +1,22 @@
 <header>
   <h1>{{ title }}</h1>
-  <nav>
+    <nav>
     <a routerLink="/upload" routerLinkActive="active">Upload Photo</a>
     <a routerLink="/avatar" routerLinkActive="active">Avatar View</a>
     <a routerLink="/upload-outfits" routerLinkActive="active">Upload Outfits</a>
     <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
     <a routerLink="/closet" routerLinkActive="active">Virtual Closet</a>
-  </nav>
-</header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="bottom-nav">
+    <nav>
+      <a routerLink="/upload" routerLinkActive="active">Upload</a>
+      <a routerLink="/avatar" routerLinkActive="active">Avatar</a>
+      <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
+      <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+    </nav>
+  </footer>
+

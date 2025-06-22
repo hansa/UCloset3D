@@ -1,0 +1,14 @@
+<div class="gallery" *ngIf="outfits.length; else empty">
+  <div class="card" *ngFor="let outfit of outfits" (click)="onSelect(outfit)">
+    <img [src]="outfit.imageUrl" alt="Outfit" />
+    <div class="actions" (click)="$event.stopPropagation()">
+      <button (click)="share(outfit)" aria-label="Share">
+        <span class="share-icon">&#x1F4E4;</span>
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #empty>
+  <p>No outfits saved.</p>
+</ng-template>
+<div class="error" *ngIf="error">{{ error }}</div>

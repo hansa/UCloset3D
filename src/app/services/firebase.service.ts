@@ -12,4 +12,15 @@ export class FirebaseService {
     // Save outfit data to Firestore
     return Promise.resolve();
   }
+
+  async getOutfits(): Promise<any[]> {
+    // Retrieve outfits from Firestore
+    return Promise.resolve([
+      {
+        id: '1',
+        imageUrl:
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAnRSTlMA/1uRIrUAAAANSURBVAjXY2AAAAACAAHiIbwzAAAAAElFTkSuQmCC'
+      }
+    ]);
+  }
 }
