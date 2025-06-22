@@ -22,6 +22,7 @@ import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
 import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
+import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { AnimateVideoComponent } from './components/animate-video/animate-video.
     FashionChallengeComponent,
     MotionGeneratorComponent,
     AnimateVideoComponent,
+    MetahumanVideoComponent,
   ],
   imports: [
     BrowserModule,
