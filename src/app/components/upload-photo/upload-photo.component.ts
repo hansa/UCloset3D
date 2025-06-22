@@ -11,6 +11,11 @@ import { AvatarService } from '../../services/avatar.service';
 export class UploadPhotoComponent {
   selectedFile?: File;
   error?: string;
+  /**
+   * Stores the URL returned from background removal so it can
+   * be passed to the avatar preview component when navigating.
+   */
+  processedUrl?: string;
   loading = false;
 
   constructor(
