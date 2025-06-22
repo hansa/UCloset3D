@@ -30,17 +30,27 @@ export class VirtualClosetComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.loadAvatar();
-    // Demo outfit pieces
-    this.pieces = [
-      { url: 'assets/item1.png', x: -120, y: 0 },
-      { url: 'assets/item2.png', x: 120, y: 0 }
-    ];
+  async ngOnInit(): Promise<void> {
+    await this.loadAvatar();
+    await this.loadPieces();
   }
 
   async loadAvatar() {
     this.avatarUrl = await this.avatarService.getAvatarUrl();
+  }
+
+  async loadPieces(): Promise<void> {
+    try {
+      const outfits = await this.firebaseService.getOutfits();
+      this.pieces = outfits.map((o, idx) => ({
+        url: o.imageUrl,
+        x: (idx - outfits.length / 2) * 120,
+        y: 0,
+      }));
+    } catch {
+      this.message = 'Failed to load outfits.';
+      this.pieces = [];
+    }
   }
 
   onDragEnd(event: CdkDragEnd, piece: ClosetItem) {

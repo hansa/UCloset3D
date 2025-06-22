@@ -5,13 +5,13 @@
 - [x] Avatar View page loads a demo avatar and shows an error if loading fails
 - [x] Mix & Match page lists outfit items and shows a message when none are available
 
-- [ ] Login
-- [ ] Avatar generation
-- [ ] Outfit uploads
-- [ ] Virtual closet drag-and-drop
-- [ ] Gallery sharing
--
-- [ ] Virtual Closet allows styling the avatar and saving outfits
-- [ ] Avatar Preview page shows the generated avatar and a Next button
+- [x] Login
+- [x] Avatar generation
+- [x] Outfit uploads
+- [x] Virtual closet drag-and-drop
+- [x] Gallery sharing
+
+- [x] Virtual Closet allows styling the avatar and saving outfits
+- [x] Avatar Preview page shows the generated avatar and a Next button
 
 
