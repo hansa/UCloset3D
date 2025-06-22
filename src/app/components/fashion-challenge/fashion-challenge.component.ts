@@ -13,6 +13,7 @@ export class FashionChallengeComponent implements OnInit {
   entries$!: Observable<ChallengeEntry[]>;
 
   constructor(private fb: FormBuilder, private challengeService: ChallengeService) {
+    this.entries$ = this.challengeService.entries$;
     this.form = this.fb.group({
       imageUrl: [''],
       description: ['']
