@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +10,36 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   form: FormGroup;
+  error?: string;
+  loading = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  submit() {
-    if (this.form.valid) {
-      // In a real app you would authenticate here. We simply navigate
-      // to the next step of the demo workflow.
+  async submit() {
+    if (this.form.invalid) {
+      return;
+    }
 
-      console.log('Login', this.form.value);
+    this.error = undefined;
+    this.loading = true;
+    const { email, password } = this.form.value;
+
+    try {
+      await this.authService.login(email, password);
       this.router.navigate(['/upload-photo']);
+    } catch {
+      this.error = 'Login failed.';
+    } finally {
+      this.loading = false;
     }
   }
 }

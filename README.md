@@ -58,18 +58,16 @@ export const environment = {
 
 Deploying to Firebase requires a valid Firebase project configuration. Ensure `firebase.json` has `"public": "dist/ucloset3d"` to match the Angular build output.
 
+## Authentication
 
-The UI provides four main pages:
+The login screen uses Firebase Authentication with email and password credentials. Create a user in your Firebase project and sign in with those credentials. Upon success you will be taken to the photo upload page.
 
-1. **Upload Photo** – process an image with background removal.
-2. **Avatar View** – preview a Ready Player Me avatar and measurements.
-3. **Mix & Match** – list outfit items in a simple mix and match interface.
-4. **Virtual Closet** – style an avatar with draggable outfit pieces.
 The UI provides the following pages:
 1. **Upload Photo** – process an image with background removal.
 2. **Avatar Preview** – display the generated avatar with an option to continue.
 3. **Avatar View** – preview a Ready Player Me avatar.
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
+5. **Virtual Closet** – style an avatar with draggable outfit pieces.
 
 ## Six-Screen Workflow
 
