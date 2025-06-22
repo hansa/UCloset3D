@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from './firebase.service';
-
-interface ClosetItem {
-  url: string;
-  category?: string;
-  x?: number;
-  y?: number;
-}
+import { ClosetItem } from '../models/closet-item';
 
 @Injectable({ providedIn: 'root' })
 export class OutfitGeneratorService {
