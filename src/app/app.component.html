@@ -1,11 +1,12 @@
-<header>
+<header *ngIf="showNav">
   <h1>{{ title }}</h1>
-  <nav>
-    <a routerLink="/upload" routerLinkActive="active">Upload Photo</a>
-    <a routerLink="/avatar" routerLinkActive="active">Avatar View</a>
-    <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
-  </nav>
 </header>
 <main>
   <router-outlet></router-outlet>
 </main>
+<nav class="bottom-nav" *ngIf="showNav">
+  <a routerLink="/upload-photo" routerLinkActive="active">Home</a>
+  <a routerLink="/virtual-closet" routerLinkActive="active">Wardrobe</a>
+  <a routerLink="/cart" routerLinkActive="active">Cart</a>
+  <a routerLink="/profile" routerLinkActive="active">Profile</a>
+</nav>
