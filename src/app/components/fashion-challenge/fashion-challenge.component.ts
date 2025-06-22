@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ChallengeService, ChallengeEntry } from '../../services/challenge.service';
 
 @Component({
@@ -7,15 +8,19 @@ import { ChallengeService, ChallengeEntry } from '../../services/challenge.servi
   templateUrl: './fashion-challenge.component.html',
   styleUrls: ['./fashion-challenge.component.css']
 })
-export class FashionChallengeComponent {
+export class FashionChallengeComponent implements OnInit {
   form: FormGroup;
-  entries$ = this.challengeService.entries$;
+  entries$!: Observable<ChallengeEntry[]>;
 
   constructor(private fb: FormBuilder, private challengeService: ChallengeService) {
     this.form = this.fb.group({
       imageUrl: [''],
       description: ['']
     });
+  }
+
+  ngOnInit(): void {
+    this.entries$ = this.challengeService.entries$;
   }
 
   submit() {
