@@ -20,7 +20,20 @@ This is a demo Angular application for experimenting with a virtual closet exper
    ```bash
   npm start
   ```
+Install the Firebase CLI (if you haven’t already):
 
+npm install -g firebase-tools
+Log in to Firebase and select your project:
+
+firebase login
+firebase use ucloset3d
+Build the Angular project:
+
+npm install
+npm run build
+Deploy to Firebase Hosting:
+
+firebase deploy
 ## Configuration
 
 Add your API keys in `src/environments/environment.ts`:
