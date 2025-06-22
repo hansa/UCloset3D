@@ -4,14 +4,17 @@ import { UploadPhotoComponent } from './components/upload-photo/upload-photo.com
 import { AvatarViewComponent } from './components/avatar-view/avatar-view.component';
 import { MixMatchComponent } from './components/mix-match/mix-match.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'upload', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'upload', component: UploadPhotoComponent },
   { path: 'avatar-preview', component: AvatarPreviewComponent },
   { path: 'avatar', component: AvatarViewComponent },
   { path: 'mix-match', component: MixMatchComponent },
-  { path: '**', redirectTo: 'upload' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
