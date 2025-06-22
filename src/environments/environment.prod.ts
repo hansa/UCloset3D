@@ -1,8 +1,9 @@
 export const environment = {
   production: true,
-  threeDLookApiKey: '',
+  readyPlayerMeApiKey: '',
   removeBgApiKey: '',
   barcodeApiKey: '',
+  bodyBlockApiKey: '',
   firebase: {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",

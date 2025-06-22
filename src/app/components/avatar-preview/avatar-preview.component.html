@@ -1,6 +1,10 @@
 <div *ngIf="avatarUrl; else noAvatar">
   <img [src]="avatarUrl" alt="Avatar Preview" />
 </div>
+<div *ngIf="measurement">
+  <h3>Measurements</h3>
+  <pre>{{ measurement | json }}</pre>
+</div>
 <ng-template #noAvatar>
   <p>No avatar to display.</p>
 </ng-template>

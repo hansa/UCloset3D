@@ -8,10 +8,12 @@ import { Router } from '@angular/router';
 })
 export class AvatarPreviewComponent {
   avatarUrl?: string;
+  measurement?: any;
 
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
     this.avatarUrl = navigation?.extras.state?.['avatarUrl'];
+    this.measurement = navigation?.extras.state?.['measurement'];
   }
 
   next(): void {
