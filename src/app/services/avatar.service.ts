@@ -3,11 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({ providedIn: 'root' })
 export class AvatarService {
   private generatedUrl?: string;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   async createAvatar(file: File): Promise<string> {
     const formData = new FormData();
