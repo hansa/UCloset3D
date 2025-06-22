@@ -58,5 +58,6 @@ export class UploadPhotoComponent {
       this.error = 'Failed to process image.';
     }
     this.loading = false;
+
   }
 }

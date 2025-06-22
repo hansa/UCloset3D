@@ -1,4 +1,6 @@
+
 ul.outfits { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+
 li {
   padding: 0.25rem 0;
   background: #f0f0f0;
@@ -12,6 +14,7 @@ li img {
   height: auto;
   display: block;
   margin-bottom: 0.25rem;
+
 }
 
 p {

@@ -21,6 +21,11 @@ The UI provides several pages:
 5. **Body Measurements** – uses the 3DLOOK API to extract measurements from your uploaded photo and feed them into Ready Player Me.
 6. **Virtual Wardrobe** – store your processed clothing items locally and drag them onto the avatar.
 
+The UI provides three main pages:
+1. **Upload Photo** – process an image with background removal.
+2. **Avatar View** – preview a sample 3D avatar.
+3. **Mix & Match** – list outfit items in a simple mix and match interface.
+
 ## Development
 
 1. Install dependencies
@@ -43,6 +48,8 @@ To enable PWA features during development, run:
 ng build --configuration production
 ```
 
+Navigate between pages using the links in the header. The Angular router loads each feature on its own route.
+
 Deploying to Firebase requires a valid Firebase project configuration.
 Make sure `firebase.json` points to the `dist/ucloset3d` folder and includes a rewrite rule so all routes serve `index.html`.
 Background removal uses the Remove.bg API and requires an API key configured in `src/app/services/removebg.service.ts`.
@@ -60,3 +67,4 @@ npm run build
 firebase deploy
 ```
 Currently there are no unit tests. The `npm test` script outputs a message.
+

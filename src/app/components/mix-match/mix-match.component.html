@@ -1,3 +1,4 @@
+
 <ul class="outfits" *ngIf="outfits.length; else empty">
   <li *ngFor="let item of outfits">
     <img [src]="item.image" [alt]="item.title" />

@@ -15,6 +15,7 @@ export class AvatarViewComponent implements OnInit {
   shoesUrl?: string;
   dragging = false;
 
+
   constructor(private avatarService: AvatarService) {}
 
   ngOnInit(): void {
@@ -59,5 +60,6 @@ export class AvatarViewComponent implements OnInit {
       case 'bottom': this.bottomUrl = item.url; break;
       case 'shoes': this.shoesUrl = item.url; break;
     }
+
   }
 }
