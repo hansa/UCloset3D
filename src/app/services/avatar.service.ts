@@ -11,6 +11,14 @@ export class AvatarService {
   constructor(private http: HttpClient) {}
 
   async createAvatar(file: File): Promise<string> {
+    if (
+      !environment.readyPlayerMeApiKey ||
+      environment.readyPlayerMeApiKey.includes('YOUR_READY_PLAYER_ME_API_KEY')
+    ) {
+      console.warn('Ready Player Me API key not configured; using default avatar');
+      return 'assets/avatar-default.glb';
+    }
+
     const formData = new FormData();
     formData.append('photo', file);
 
@@ -18,16 +26,21 @@ export class AvatarService {
       Authorization: `Bearer ${environment.readyPlayerMeApiKey}`
     });
 
-    const response = await firstValueFrom(
-      this.http.post<{ avatarUrl: string }>(
-        'https://api.readyplayer.me/v1/avatars',
-        formData,
-        { headers }
-      )
-    );
+    try {
+      const response = await firstValueFrom(
+        this.http.post<{ avatarUrl: string }>(
+          'https://api.readyplayer.me/v1/avatars',
+          formData,
+          { headers }
+        )
+      );
 
-    this.generatedUrl = response.avatarUrl;
-    return response.avatarUrl;
+      this.generatedUrl = response.avatarUrl;
+      return response.avatarUrl;
+    } catch (err) {
+      console.error('Failed to generate avatar from Ready Player Me', err);
+      return 'assets/avatar-default.glb';
+    }
   }
 
   async getAvatarUrl(): Promise<string> {
