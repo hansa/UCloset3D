@@ -15,12 +15,12 @@ export class AvatarService {
     formData.append('photo', file);
 
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${environment.threeDLookApiKey}`
+      Authorization: `Bearer ${environment.readyPlayerMeApiKey}`
     });
 
     const response = await firstValueFrom(
       this.http.post<{ avatarUrl: string }>(
-        'https://api.3dlook.ai/v3/avatars',
+        'https://api.readyplayer.me/v1/avatars',
         formData,
         { headers }
       )
@@ -35,8 +35,7 @@ export class AvatarService {
       return this.generatedUrl;
     }
 
-    // Placeholder: integrate with 3DLOOK or Ready Player Me
-    // Return a demo avatar stored in assets
+    // Return a demo avatar stored in assets when no avatar has been generated
     return 'assets/avatar-default.glb';
   }
 }
