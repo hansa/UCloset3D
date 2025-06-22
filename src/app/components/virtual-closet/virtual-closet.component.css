@@ -30,6 +30,11 @@
   margin: 0.5rem auto;
 }
 
+.generate {
+  display: block;
+  margin: 0.5rem auto;
+}
+
 .message {
   text-align: center;
   margin-bottom: 0.5rem;
