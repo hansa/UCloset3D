@@ -3,4 +3,5 @@ export interface ClosetItem {
   category?: string;
   x?: number;
   y?: number;
+  layer?: number;
 }

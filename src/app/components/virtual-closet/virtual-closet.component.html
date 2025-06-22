@@ -7,6 +7,7 @@
     *ngFor="let piece of pieces"
     class="piece"
     [src]="piece.url"
+    [style.z-index]="piece.layer"
     cdkDrag
     [cdkDragFreeDragPosition]="{x: piece.x, y: piece.y}"
     (cdkDragEnded)="onDragEnd($event, piece)"
