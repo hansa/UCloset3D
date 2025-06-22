@@ -1,6 +1,6 @@
 # UCloset3D
 
-This is a demo Angular application for experimenting with a virtual closet experience. It now integrates with real services such as 3DLOOK for avatar generation, Remove.bg for background removal and Firebase for storage.
+This is a demo Angular application for experimenting with a virtual closet experience. It integrates with real services such as Ready Player Me for avatar generation, Remove.bg for background removal, BodyBlock for measurements and Firebase for storage.
 
 ## Setup
 
@@ -41,9 +41,10 @@ Add your API keys in `src/environments/environment.ts`:
 ```
 export const environment = {
   production: false,
-  threeDLookApiKey: 'YOUR_3DLOOK_API_KEY',
+  readyPlayerMeApiKey: 'YOUR_READY_PLAYER_ME_API_KEY',
   removeBgApiKey: 'YOUR_REMOVE_BG_API_KEY',
   barcodeApiKey: 'YOUR_BARCODE_API_KEY',
+  bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
   firebase: {
     apiKey: 'YOUR_FIREBASE_API_KEY',
     authDomain: 'YOUR_FIREBASE_AUTH_DOMAIN',
@@ -61,19 +62,19 @@ Deploying to Firebase requires a valid Firebase project configuration. Ensure `f
 The UI provides four main pages:
 
 1. **Upload Photo** – process an image with background removal.
-2. **Avatar View** – preview a sample 3D avatar.
+2. **Avatar View** – preview a Ready Player Me avatar and measurements.
 3. **Mix & Match** – list outfit items in a simple mix and match interface.
 4. **Virtual Closet** – style an avatar with draggable outfit pieces.
 The UI provides the following pages:
 1. **Upload Photo** – process an image with background removal.
 2. **Avatar Preview** – display the generated avatar with an option to continue.
-3. **Avatar View** – preview a sample 3D avatar.
+3. **Avatar View** – preview a Ready Player Me avatar.
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
 
 ## Six-Screen Workflow
 
 1. **Login** – authenticate with a demo account.
-2. **Avatar Generation** – create a personalized 3D avatar from a selfie.
+2. **Avatar Generation** – create a personalized Ready Player Me avatar and collect measurements using BodyBlock.
 3. **Outfit Uploads** – add clothing images and automatically remove the background.
 4. **Virtual Closet** – manage wardrobe items with drag‑and‑drop sorting.
 5. **Mix & Match** – arrange outfits using pieces from the virtual closet.

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RemoveBgService } from '../../services/removebg.service';
 import { AvatarService } from '../../services/avatar.service';
+import { BodyBlockService } from '../../services/bodyblock.service';
 
 @Component({
   selector: 'app-upload-photo',
@@ -16,11 +17,13 @@ export class UploadPhotoComponent {
    * be passed to the avatar preview component when navigating.
    */
   processedUrl?: string;
+  measurements?: any;
   loading = false;
 
   constructor(
     private avatarService: AvatarService,
-  private removeBgService: RemoveBgService,
+    private removeBgService: RemoveBgService,
+    private bodyBlockService: BodyBlockService,
     private router: Router
   ) {}
 
@@ -41,8 +44,9 @@ export class UploadPhotoComponent {
     try {
       this.error = undefined;
       this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+      this.measurements = await this.bodyBlockService.measure(this.selectedFile);
       const avatarUrl = await this.avatarService.createAvatar(this.selectedFile);
-      this.router.navigate(['/avatar-preview'], { state: { avatarUrl } });
+      this.router.navigate(['/avatar-preview'], { state: { avatarUrl, measurement: this.measurements } });
 
     } catch (err) {
       this.error = 'Failed to generate avatar.';
