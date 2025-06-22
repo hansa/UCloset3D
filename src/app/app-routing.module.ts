@@ -15,6 +15,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
 import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
+import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 
 
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
   { path: 'animate', component: AnimateVideoComponent },
+  { path: 'metahuman-video', component: MetahumanVideoComponent },
   { path: 'challenge', component: FashionChallengeComponent },
   { path: 'motion-generator', component: MotionGeneratorComponent },
 //   { path: '**', redirectTo: 'upload' }

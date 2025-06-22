@@ -49,4 +49,18 @@ export class SaymotionService {
       )
     );
   }
+
+  async animateVideo(video: File): Promise<JobResponse> {
+    const cookie = await this.authenticate();
+    const headers = new HttpHeaders({ Cookie: cookie });
+    const formData = new FormData();
+    formData.append('file', video);
+    return await firstValueFrom(
+      this.http.post<JobResponse>(
+        `${environment.sayMotionBaseUrl}/job/v1/process/video2metahuman`,
+        formData,
+        { headers }
+      )
+    );
+  }
 }

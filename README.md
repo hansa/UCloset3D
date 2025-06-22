@@ -106,6 +106,7 @@ The UI provides the following pages:
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
 5. **Virtual Closet** – style an avatar with draggable outfit pieces.
 6. **Motion Generator** – create animations from a text prompt using the SayMotion API.
+7. **Metahuman Video** – upload a video and generate a MetaHuman animation via the SayMotion API.
 
 ## Six-Screen Workflow
 
@@ -116,6 +117,7 @@ The UI provides the following pages:
 5. **Mix & Match** – arrange outfits using pieces from the virtual closet.
 6. **Motion Generator** – convert text prompts into animations.
 7. **Gallery Sharing** – publish completed looks to a shareable gallery page.
+8. **Metahuman Video** – animate a MetaHuman from an uploaded video.
 
 ## Default outfits
 
