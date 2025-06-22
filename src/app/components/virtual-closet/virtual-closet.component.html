@@ -1,0 +1,23 @@
+
+<div class="closet-container">
+  <div class="avatar" *ngIf="avatarUrl">
+    <img [src]="avatarUrl" alt="Avatar" />
+  </div>
+  <img
+    *ngFor="let piece of pieces"
+    class="piece"
+    [src]="piece.url"
+    cdkDrag
+    [cdkDragFreeDragPosition]="{x: piece.x, y: piece.y}"
+    (cdkDragEnded)="onDragEnd($event, piece)"
+  />
+</div>
+<button class="save" (click)="save()" [disabled]="saving">Save Outfit</button>
+<div class="message" *ngIf="message">{{ message }}</div>
+<nav class="action-bar">
+  <button><span>🏠</span><div>Home</div></button>
+  <button><span>🧥</span><div>Wardrobe</div></button>
+  <button><span>🛒</span><div>Cart</div></button>
+  <button><span>👤</span><div>Profile</div></button>
+</nav>
+

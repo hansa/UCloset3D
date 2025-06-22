@@ -1,0 +1,7 @@
+<div *ngIf="avatarUrl; else noAvatar">
+  <img [src]="avatarUrl" alt="Avatar Preview" />
+</div>
+<ng-template #noAvatar>
+  <p>No avatar to display.</p>
+</ng-template>
+<button (click)="next()">Next</button>

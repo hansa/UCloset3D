@@ -1,17 +1,23 @@
-.upload-form {
+
+.upload-outfits {
   margin-bottom: 1rem;
+}
+
+select {
+  margin-right: 0.5rem;
 }
 
 button {
   margin-left: 0.5rem;
 }
 
-
-.loading {
-  margin-top: 0.5rem;
+img {
+  max-width: 100px;
+  margin: 0.5rem;
 }
 
 .error {
   color: #c00;
   margin-top: 0.5rem;
 }
+
