@@ -14,6 +14,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
 import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
+import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
+
 
 
 const routes: Routes = [
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
+  { path: 'animate', component: AnimateVideoComponent },
   { path: 'challenge', component: FashionChallengeComponent },
   { path: 'motion-generator', component: MotionGeneratorComponent },
 //   { path: '**', redirectTo: 'upload' }

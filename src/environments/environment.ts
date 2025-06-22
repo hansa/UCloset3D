@@ -12,6 +12,8 @@ export const environment = {
   sayMotionBaseUrl: '',
   sayMotionClientId: '',
   sayMotionClientSecret: '',
+  deepMotionApiKey: 'YOUR_DEEPMOTION_API_KEY',
+  deepMotionApiUrl: 'https://api.deepmotion.com/animate',
   firebase: {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",
