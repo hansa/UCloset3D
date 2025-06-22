@@ -1,5 +1,16 @@
 <div *ngIf="avatarUrl; else noAvatar">
-  <img [src]="avatarUrl" alt="Avatar Preview" />
+  <ng-container *ngIf="isGlb(avatarUrl); else imagePreview">
+    <model-viewer
+      [src]="avatarUrl"
+      alt="Avatar Preview"
+      camera-controls
+      auto-rotate
+      style="width: 100%; height: 300px;"
+    ></model-viewer>
+  </ng-container>
+  <ng-template #imagePreview>
+    <img [src]="avatarUrl" alt="Avatar Preview" />
+  </ng-template>
 </div>
 <div *ngIf="measurement">
   <h3>Measurements</h3>

@@ -16,6 +16,10 @@ export class AvatarPreviewComponent {
     this.measurement = navigation?.extras.state?.['measurement'];
   }
 
+  isGlb(url?: string): boolean {
+    return !!url && url.toLowerCase().endsWith('.glb');
+  }
+
   next(): void {
     this.router.navigate(['/upload-outfits']);
   }

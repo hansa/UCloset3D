@@ -24,4 +24,8 @@ export class AvatarViewComponent implements OnInit {
       this.error = 'Failed to load avatar.';
     }
   }
+
+  isGlb(url?: string | null): boolean {
+    return !!url && url.toLowerCase().endsWith('.glb');
+  }
 }
