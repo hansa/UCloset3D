@@ -1,0 +1,18 @@
+<div class="upload-outfits">
+  <label>
+    Category
+    <select [(ngModel)]="selectedCategory">
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+  </label>
+  <input type="file" multiple (change)="onFilesSelected($event)" />
+  <button (click)="uploadAll()" [disabled]="!selectedFiles.length || isUploading">
+    Upload
+  </button>
+</div>
+<div class="error" *ngIf="error">{{ error }}</div>
+<ul *ngIf="uploadedUrls.length">
+  <li *ngFor="let url of uploadedUrls">
+    <img [src]="url" alt="Uploaded" />
+  </li>
+</ul>
