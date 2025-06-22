@@ -1,12 +1,25 @@
 <header *ngIf="showNav">
   <h1>{{ title }}</h1>
-</header>
-<main>
-  <router-outlet></router-outlet>
-</main>
-<nav class="bottom-nav" *ngIf="showNav">
-  <a routerLink="/upload-photo" routerLinkActive="active">Home</a>
-  <a routerLink="/virtual-closet" routerLinkActive="active">Wardrobe</a>
-  <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <nav>
+    <a routerLink="/upload-photo" routerLinkActive="active">Home</a>
+    <a routerLink="/upload" routerLinkActive="active">Upload Photo</a>
+    <a routerLink="/avatar" routerLinkActive="active">Avatar View</a>
+    <a routerLink="/upload-outfits" routerLinkActive="active">Upload Outfits</a>
+    <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
+    <a routerLink="/virtual-closet" routerLinkActive="active">Wardrobe</a>
+    <a routerLink="/closet" routerLinkActive="active">Virtual Closet</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
   <a routerLink="/profile" routerLinkActive="active">Profile</a>
-</nav>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="bottom-nav">
+    <nav>
+      <a routerLink="/upload" routerLinkActive="active">Upload</a>
+      <a routerLink="/avatar" routerLinkActive="active">Avatar</a>
+      <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>
+      <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+    </nav>
+  </footer>

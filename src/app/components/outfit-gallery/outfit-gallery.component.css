@@ -1,0 +1,37 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.actions {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.share-icon {
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #c00;
+}

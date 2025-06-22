@@ -1,1 +1,15 @@
-/* Login component styles */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 300px;
+  margin: 2rem auto;
+}
+
+button {
+  background: peachpuff;
+  border: none;
+  padding: 0.5rem;
+}
+

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { AvatarViewComponent } from './components/avatar-view/avatar-view.component';
 import { UploadPhotoComponent } from './components/upload-photo/upload-photo.component';
@@ -14,6 +14,10 @@ import { VirtualClosetComponent } from './components/virtual-closet/virtual-clos
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-gallery.component';
+import { VirtualClosetComponent } from './components/virtual-closet/virtual-closet.component';
+import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
+
 
 @NgModule({
   declarations: [
@@ -26,12 +30,18 @@ import { ProfileComponent } from './components/profile/profile.component';
     VirtualClosetComponent,
     GalleryComponent,
     CartComponent,
-    ProfileComponent
+    ProfileComponent,
+    OutfitGalleryComponent
+    VirtualClosetComponent
+    AvatarPreviewComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule,
+    DragDropModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
