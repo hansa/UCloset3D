@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 export class AvatarService {
   private generatedUrl?: string;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   async createAvatar(file: File): Promise<string> {
     const formData = new FormData();
