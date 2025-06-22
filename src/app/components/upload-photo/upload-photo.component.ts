@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RemoveBgService } from '../../services/removebg.service';
 import { AvatarService } from '../../services/avatar.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class UploadPhotoComponent {
 
   constructor(
     private avatarService: AvatarService,
+  private removeBgService: RemoveBgService,
     private router: Router
   ) {}
 
@@ -33,8 +35,11 @@ export class UploadPhotoComponent {
     this.loading = true;
     try {
       this.error = undefined;
-      await this.avatarService.createAvatar(this.selectedFile);
-      this.router.navigate(['/avatar']);
+      this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+      this.router.navigate(['/avatar-preview'], { state: { avatarUrl: this.processedUrl } });
+//       await this.avatarService.createAvatar(this.selectedFile);
+//       this.router.navigate(['/avatar']);
+
     } catch (err) {
       this.error = 'Failed to generate avatar.';
     } finally {
