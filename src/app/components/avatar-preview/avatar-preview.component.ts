@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-avatar-preview',
   templateUrl: './avatar-preview.component.html',
-  styleUrls: ['./avatar-preview.component.css']
+  styleUrls: ['./avatar-preview.component.scss']
 })
 export class AvatarPreviewComponent {
   avatarUrl?: string;

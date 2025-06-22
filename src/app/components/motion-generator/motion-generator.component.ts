@@ -5,7 +5,7 @@ import { SaymotionService } from '../../services/saymotion.service';
 @Component({
   selector: 'app-motion-generator',
   templateUrl: './motion-generator.component.html',
-  styleUrls: ['./motion-generator.component.css']
+  styleUrls: ['./motion-generator.component.scss']
 })
 export class MotionGeneratorComponent {
   form: FormGroup;

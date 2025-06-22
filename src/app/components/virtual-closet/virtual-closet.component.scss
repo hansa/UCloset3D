@@ -59,3 +59,12 @@
   font-size: 1.2rem;
   color: #fff;
 }
+
+@media (max-width: 600px) {
+  .closet-container {
+    height: 300px;
+  }
+  .piece {
+    width: 60px;
+  }
+}

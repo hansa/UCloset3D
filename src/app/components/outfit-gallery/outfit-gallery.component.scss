@@ -28,6 +28,12 @@ button {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
 .instagram-icon {
   font-size: 1.2rem;
 }

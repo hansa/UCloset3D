@@ -4,7 +4,7 @@ import { AvatarService } from '../../services/avatar.service';
 @Component({
   selector: 'app-avatar-view',
   templateUrl: './avatar-view.component.html',
-  styleUrls: ['./avatar-view.component.css']
+  styleUrls: ['./avatar-view.component.scss']
 })
 export class AvatarViewComponent implements OnInit {
   avatarUrl: string | null = null;

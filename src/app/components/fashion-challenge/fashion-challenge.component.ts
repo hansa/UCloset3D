@@ -6,7 +6,7 @@ import { ChallengeService, ChallengeEntry } from '../../services/challenge.servi
 @Component({
   selector: 'app-fashion-challenge',
   templateUrl: './fashion-challenge.component.html',
-  styleUrls: ['./fashion-challenge.component.css']
+  styleUrls: ['./fashion-challenge.component.scss']
 })
 export class FashionChallengeComponent implements OnInit {
   form: FormGroup;

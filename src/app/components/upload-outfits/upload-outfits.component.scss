@@ -1,6 +1,9 @@
 
 .upload-outfits {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 select {
@@ -25,5 +28,12 @@ img {
   padding: 1rem;
   text-align: center;
   margin: 0.5rem 0;
+}
+
+@media (max-width: 600px) {
+  .upload-outfits {
+    width: 90%;
+    margin: 1rem auto;
+  }
 }
 

@@ -10,7 +10,7 @@ interface Outfit {
 @Component({
   selector: 'app-outfit-gallery',
   templateUrl: './outfit-gallery.component.html',
-  styleUrls: ['./outfit-gallery.component.css']
+  styleUrls: ['./outfit-gallery.component.scss']
 })
 export class OutfitGalleryComponent implements OnInit {
   outfits: Outfit[] = [];
