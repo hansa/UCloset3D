@@ -3,10 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { AvatarService } from '../../services/avatar.service';
 import { FirebaseService } from '../../services/firebase.service';
+import { OutfitGeneratorService } from '../../services/outfit-generator.service';
 import { Router } from '@angular/router';
 
 interface ClosetItem {
   url: string;
+  category?: string;
   x: number;
   y: number;
 }
@@ -27,6 +29,7 @@ export class VirtualClosetComponent implements OnInit {
   constructor(
     private avatarService: AvatarService,
     private firebaseService: FirebaseService,
+    private outfitGenerator: OutfitGeneratorService,
     private router: Router
   ) {}
 
@@ -44,12 +47,22 @@ export class VirtualClosetComponent implements OnInit {
       const outfits = await this.firebaseService.getOutfits();
       this.pieces = outfits.map((o, idx) => ({
         url: o.imageUrl,
+        category: o.category,
         x: (idx - outfits.length / 2) * 120,
         y: 0,
       }));
     } catch {
       this.message = 'Failed to load outfits.';
       this.pieces = [];
+    }
+  }
+
+  async generate(): Promise<void> {
+    this.message = undefined;
+    try {
+      this.pieces = await this.outfitGenerator.generateRandomOutfit();
+    } catch {
+      this.message = 'Failed to generate outfit.';
     }
   }
 
