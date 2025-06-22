@@ -12,6 +12,7 @@ import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-galle
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
+  { path: 'challenge', component: FashionChallengeComponent },
 //   { path: '**', redirectTo: 'upload' }
   { path: '**', redirectTo: 'login' }
 ];
