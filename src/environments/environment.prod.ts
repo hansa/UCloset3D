@@ -4,6 +4,8 @@ export const environment = {
   removeBgApiKey: '',
   barcodeApiKey: '',
   bodyBlockApiKey: '',
+  // URL of the optional open-source avatar API for production builds
+  openAvatarApiUrl: '',
   firebase: {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",

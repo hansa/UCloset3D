@@ -1,6 +1,6 @@
 # UCloset3D
 
-This is a demo Angular application for experimenting with a virtual closet experience. It integrates with real services such as Ready Player Me for avatar generation, Remove.bg for background removal, BodyBlock for measurements and Firebase for storage.
+This is a demo Angular application for experimenting with a virtual closet experience. It integrates with Firebase for storage and can generate avatars using either Ready Player Me or a local open‑source pipeline.
 
 ## Setup
 
@@ -34,6 +34,24 @@ npm run build
 Deploy to Firebase Hosting:
 
 firebase deploy
+
+### Optional open-source avatar server
+
+The project can generate avatars locally using open-source tools. A small Flask
+server is provided in `backend/` as a starting point. It returns a demo avatar
+and sample measurements but can be extended with projects like
+[SMPL-Anthropometry](https://github.com/sergeyprokudin/smpl-anthropometry) or
+[3d-body-measurements](https://github.com/korrair/3d-body-measurements).
+
+Start the server with:
+
+```bash
+pip install -r backend/requirements.txt
+npm run start:avatar-api
+```
+
+Then set `openAvatarApiUrl` in `src/environments/environment.ts` to the server
+URL, e.g. `http://localhost:5000`.
 ## Configuration
 
 Add your API keys in `src/environments/environment.ts`:
@@ -45,6 +63,7 @@ export const environment = {
   removeBgApiKey: 'YOUR_REMOVE_BG_API_KEY',
   barcodeApiKey: 'YOUR_BARCODE_API_KEY',
   bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
+  openAvatarApiUrl: '',
   firebase: {
     apiKey: 'YOUR_FIREBASE_API_KEY',
     authDomain: 'YOUR_FIREBASE_AUTH_DOMAIN',
@@ -65,14 +84,14 @@ The login screen uses Firebase Authentication with email and password credential
 The UI provides the following pages:
 1. **Upload Photo** – process an image with background removal. Drag and drop or select a file to begin.
 2. **Avatar Preview** – display the generated avatar with an option to continue.
-3. **Avatar View** – preview a Ready Player Me avatar.
+3. **Avatar View** – preview the generated avatar.
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
 5. **Virtual Closet** – style an avatar with draggable outfit pieces.
 
 ## Six-Screen Workflow
 
 1. **Login** – authenticate with a demo account.
-2. **Avatar Generation** – create a personalized Ready Player Me avatar and collect measurements using BodyBlock.
+2. **Avatar Generation** – create a personalized avatar using either Ready Player Me or the optional open-source pipeline and collect measurements.
 3. **Outfit Uploads** – add clothing images with drag-and-drop support and automatically remove the background.
 4. **Virtual Closet** – manage wardrobe items with drag‑and‑drop sorting.
 5. **Mix & Match** – arrange outfits using pieces from the virtual closet.
