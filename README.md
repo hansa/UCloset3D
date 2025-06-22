@@ -60,7 +60,7 @@ Deploying to Firebase requires a valid Firebase project configuration. Ensure `f
 
 ## Authentication
 
-The login screen uses Firebase Authentication with email and password credentials. Create a user in your Firebase project and sign in with those credentials. Upon success you will be taken to the photo upload page.
+The login screen uses Firebase Authentication with email and password credentials. You can create an account using the new **Sign Up** page at `/signup` and then sign in with those credentials. Upon success you will be taken to the photo upload page.
 
 The UI provides the following pages:
 1. **Upload Photo** – process an image with background removal.
