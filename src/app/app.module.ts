@@ -9,6 +9,7 @@ import { AvatarViewComponent } from './components/avatar-view/avatar-view.compon
 import { UploadPhotoComponent } from './components/upload-photo/upload-photo.component';
 import { MixMatchComponent } from './components/mix-match/mix-match.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
+import { UploadOutfitsComponent } from './components/upload-outfits/upload-outfits.component';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoginComponent } from './components/login/login.component';
     AvatarViewComponent,
     UploadPhotoComponent,
     MixMatchComponent,
-    AvatarPreviewComponent
+    AvatarPreviewComponent,
+    UploadOutfitsComponent,
     LoginComponent
   ],
   imports: [
