@@ -15,7 +15,6 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-gallery.component';
-import { VirtualClosetComponent } from './components/virtual-closet/virtual-closet.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 
 
@@ -31,8 +30,7 @@ import { AvatarPreviewComponent } from './components/avatar-preview/avatar-previ
     GalleryComponent,
     CartComponent,
     ProfileComponent,
-    OutfitGalleryComponent
-    VirtualClosetComponent
+    OutfitGalleryComponent,
     AvatarPreviewComponent,
   ],
   imports: [
@@ -41,8 +39,7 @@ import { AvatarPreviewComponent } from './components/avatar-preview/avatar-previ
     FormsModule,
     AppRoutingModule,
     DragDropModule,
-    ReactiveFormsModule,
-    AppRoutingModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
