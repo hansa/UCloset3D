@@ -16,6 +16,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-gallery.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
+import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AvatarPreviewComponent } from './components/avatar-preview/avatar-previ
     ProfileComponent,
     OutfitGalleryComponent,
     AvatarPreviewComponent,
+    AdBannerComponent,
   ],
   imports: [
     BrowserModule,

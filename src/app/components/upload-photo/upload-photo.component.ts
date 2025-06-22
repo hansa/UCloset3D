@@ -41,9 +41,8 @@ export class UploadPhotoComponent {
     try {
       this.error = undefined;
       this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
-      this.router.navigate(['/avatar-preview'], { state: { avatarUrl: this.processedUrl } });
-//       await this.avatarService.createAvatar(this.selectedFile);
-//       this.router.navigate(['/avatar']);
+      const avatarUrl = await this.avatarService.createAvatar(this.selectedFile);
+      this.router.navigate(['/avatar-preview'], { state: { avatarUrl } });
 
     } catch (err) {
       this.error = 'Failed to generate avatar.';
