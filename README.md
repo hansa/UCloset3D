@@ -117,6 +117,12 @@ The UI provides the following pages:
 6. **Motion Generator** – convert text prompts into animations.
 7. **Gallery Sharing** – publish completed looks to a shareable gallery page.
 
+## Default outfits
+
+Example outfit images are stored inline as base64 data URIs in
+`src/app/models/default-outfits.ts`. This avoids keeping `.png` files in
+`src/assets/outfits`.
+
 ## Development
 
 1. Install dependencies
