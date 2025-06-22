@@ -13,6 +13,7 @@ import { AvatarPreviewComponent } from './components/avatar-preview/avatar-previ
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FashionChallengeComponent } from './components/fashion-challenge/fashion-challenge.component';
+import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
   { path: 'challenge', component: FashionChallengeComponent },
+  { path: 'motion-generator', component: MotionGeneratorComponent },
 //   { path: '**', redirectTo: 'upload' }
   { path: '**', redirectTo: 'login' }
 ];
