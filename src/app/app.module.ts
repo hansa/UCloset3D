@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { AvatarViewComponent } from './components/avatar-view/avatar-view.component';
 import { UploadPhotoComponent } from './components/upload-photo/upload-photo.component';
 import { MixMatchComponent } from './components/mix-match/mix-match.component';
+import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AvatarViewComponent,
     UploadPhotoComponent,
-    MixMatchComponent
+    MixMatchComponent,
+    AvatarPreviewComponent
   ],
   imports: [
     BrowserModule,

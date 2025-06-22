@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RemoveBgService } from '../../services/removebg.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class UploadPhotoComponent {
   processedUrl?: string;
   error?: string;
 
-  constructor(private removeBgService: RemoveBgService) {}
+  constructor(private removeBgService: RemoveBgService, private router: Router) {}
 
   onFileSelected(event: Event) {
     const element = event.target as HTMLInputElement;
@@ -29,6 +30,7 @@ export class UploadPhotoComponent {
     try {
       this.error = undefined;
       this.processedUrl = await this.removeBgService.removeBackground(this.selectedFile);
+      this.router.navigate(['/avatar-preview'], { state: { avatarUrl: this.processedUrl } });
     } catch (err) {
       this.error = 'Failed to process image.';
     }
