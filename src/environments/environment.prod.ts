@@ -8,7 +8,7 @@ export const environment = {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",
     projectId: "ucloset3d",
-    storageBucket: "ucloset3d.firebasestorage.app",
+    storageBucket: "ucloset3d.appspot.com",
     messagingSenderId: "247390912347",
     appId: "1:247390912347:web:40c90c13c07cdfd126e47e",
     measurementId: "G-DNJJFTD52J"
