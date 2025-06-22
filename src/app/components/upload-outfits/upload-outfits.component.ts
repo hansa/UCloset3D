@@ -7,6 +7,7 @@ import { FirebaseService } from '../../services/firebase.service';
   templateUrl: './upload-outfits.component.html',
   styleUrls: ['./upload-outfits.component.css']
 })
+
 export class UploadOutfitsComponent {
   categories = ['Hat', 'Shirt', 'Pants', 'Shoes'];
   selectedCategory = this.categories[0];

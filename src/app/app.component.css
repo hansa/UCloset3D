@@ -10,18 +10,29 @@ header {
   text-align: center;
 }
 
-nav a {
-  margin: 0 0.5rem;
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #324851;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.bottom-nav a {
   color: #fff;
   text-decoration: none;
 }
 
-nav a.active {
+.bottom-nav a.active {
   text-decoration: underline;
 }
 
 main {
   padding: 1rem;
+  padding-bottom: 3rem;
 }
 
 footer.bottom-nav {

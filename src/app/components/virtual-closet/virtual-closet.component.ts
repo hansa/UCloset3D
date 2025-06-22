@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { AvatarService } from '../../services/avatar.service';
@@ -9,11 +10,13 @@ interface ClosetItem {
   y: number;
 }
 
+
 @Component({
   selector: 'app-virtual-closet',
   templateUrl: './virtual-closet.component.html',
   styleUrls: ['./virtual-closet.component.css']
 })
+
 export class VirtualClosetComponent implements OnInit {
   avatarUrl?: string | null;
   pieces: ClosetItem[] = [];
@@ -58,3 +61,4 @@ export class VirtualClosetComponent implements OnInit {
     }
   }
 }
+
