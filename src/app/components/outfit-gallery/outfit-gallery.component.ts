@@ -37,7 +37,7 @@ export class OutfitGalleryComponent implements OnInit {
   }
 
   share(outfit: Outfit): void {
-    // Placeholder for share logic
-    console.log('Share outfit', outfit);
+    const url = encodeURIComponent(outfit.imageUrl);
+    window.open(`https://www.instagram.com/?url=${url}`, '_blank');
   }
 }
