@@ -4,6 +4,10 @@ export const environment = {
   removeBgApiKey: 'YOUR_REMOVE_BG_API_KEY',
   barcodeApiKey: 'YOUR_BARCODE_API_KEY',
   bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
+  // URL of the optional open-source avatar API. When provided the application
+  // will generate avatars and measurements locally instead of using paid
+  // services like Ready Player Me or BodyBlock.
+  openAvatarApiUrl: '',
   firebase: {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",

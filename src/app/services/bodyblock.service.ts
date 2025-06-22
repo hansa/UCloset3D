@@ -8,6 +8,23 @@ export class BodyBlockService {
   constructor(private http: HttpClient) {}
 
   async measure(file: File): Promise<any> {
+    // Use the optional open-source avatar API when configured
+    if (environment.openAvatarApiUrl) {
+      const formData = new FormData();
+      formData.append('photo', file);
+      try {
+        return await firstValueFrom(
+          this.http.post<any>(
+            `${environment.openAvatarApiUrl}/measurements`,
+            formData
+          )
+        );
+      } catch (err) {
+        console.error('Failed to fetch measurements from open-source API', err);
+        return { chest: 0, waist: 0, hip: 0 };
+      }
+    }
+
     if (
       !environment.bodyBlockApiKey ||
       environment.bodyBlockApiKey.includes('YOUR_BODYBLOCK_API_KEY')

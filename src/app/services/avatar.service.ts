@@ -11,6 +11,26 @@ export class AvatarService {
   constructor(private http: HttpClient) {}
 
   async createAvatar(file: File): Promise<string> {
+    // Prefer the optional open-source avatar API when configured
+    if (environment.openAvatarApiUrl) {
+      const formData = new FormData();
+      formData.append('photo', file);
+      try {
+        const blob = await firstValueFrom(
+          this.http.post(
+            `${environment.openAvatarApiUrl}/generate-avatar`,
+            formData,
+            { responseType: 'blob' }
+          )
+        );
+        this.generatedUrl = URL.createObjectURL(blob);
+        return this.generatedUrl;
+      } catch (err) {
+        console.error('Failed to generate avatar from open-source API', err);
+        return 'assets/avatar-default.glb';
+      }
+    }
+
     if (
       !environment.readyPlayerMeApiKey ||
       environment.readyPlayerMeApiKey.includes('YOUR_READY_PLAYER_ME_API_KEY')
