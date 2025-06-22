@@ -1,6 +1,6 @@
 # UCloset3D
 
-This is a demo Angular application for experimenting with a virtual closet experience. It includes placeholder integrations for external services such as Ready Player Me, Remove.bg and Firebase.
+This is a demo Angular application for experimenting with a virtual closet experience. It now integrates with real services such as 3DLOOK for avatar generation, Remove.bg for background removal and Firebase for storage.
 
 ## Setup
 
@@ -18,8 +18,29 @@ This is a demo Angular application for experimenting with a virtual closet exper
    ```
 4. Start the development server
    ```bash
-   npm start
-   ```
+  npm start
+  ```
+
+## Configuration
+
+Add your API keys in `src/environments/environment.ts`:
+
+```
+export const environment = {
+  production: false,
+  threeDLookApiKey: 'YOUR_3DLOOK_API_KEY',
+  removeBgApiKey: 'YOUR_REMOVE_BG_API_KEY',
+  barcodeApiKey: 'YOUR_BARCODE_API_KEY',
+  firebase: {
+    apiKey: 'YOUR_FIREBASE_API_KEY',
+    authDomain: 'YOUR_FIREBASE_AUTH_DOMAIN',
+    projectId: 'YOUR_FIREBASE_PROJECT_ID',
+    storageBucket: 'YOUR_FIREBASE_STORAGE_BUCKET',
+    messagingSenderId: 'YOUR_FIREBASE_SENDER_ID',
+    appId: 'YOUR_FIREBASE_APP_ID'
+  }
+};
+```
 
 Deploying to Firebase requires a valid Firebase project configuration. Ensure `firebase.json` has `"public": "dist/ucloset3d"` to match the Angular build output.
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AvatarService {
@@ -12,9 +13,16 @@ export class AvatarService {
     const formData = new FormData();
     formData.append('photo', file);
 
-    // Placeholder API call - replace with real 3DLOOK endpoint
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${environment.threeDLookApiKey}`
+    });
+
     const response = await firstValueFrom(
-      this.http.post<{ avatarUrl: string }>('https://api.3dlook.com/avatar', formData)
+      this.http.post<{ avatarUrl: string }>(
+        'https://api.3dlook.ai/v3/avatars',
+        formData,
+        { headers }
+      )
     );
 
     this.generatedUrl = response.avatarUrl;

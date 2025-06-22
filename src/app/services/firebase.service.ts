@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
+import { initializeApp } from 'firebase/app';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseService {
-  // Placeholder methods for Firebase interactions
+  private app = initializeApp(environment.firebase);
+  private storage = getStorage(this.app);
+  private db = getFirestore(this.app);
+
   async uploadFile(file: File): Promise<string> {
-    // Implementation would use AngularFire to upload
-    return Promise.resolve('uploaded-file-url');
+    const fileRef = ref(this.storage, `uploads/${Date.now()}-${file.name}`);
+    await uploadBytes(fileRef, file);
+    return getDownloadURL(fileRef);
   }
 
   async saveOutfit(data: any): Promise<void> {
-    // Save outfit data to Firestore
-    return Promise.resolve();
+    await addDoc(collection(this.db, 'outfits'), data);
   }
 
   async getOutfits(): Promise<any[]> {
-    // Retrieve outfits from Firestore
-    return Promise.resolve([
-      {
-        id: '1',
-        imageUrl:
-          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAnRSTlMA/1uRIrUAAAANSURBVAjXY2AAAAACAAHiIbwzAAAAAElFTkSuQmCC'
-      }
-    ]);
+    const snapshot = await getDocs(collection(this.db, 'outfits'));
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
   }
 }
