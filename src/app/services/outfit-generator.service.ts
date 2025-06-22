@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from './firebase.service';
 import { ClosetItem } from '../models/closet-item';
+import { DEFAULT_OUTFITS } from '../models/default-outfits';
 
 @Injectable({ providedIn: 'root' })
 export class OutfitGeneratorService {
@@ -8,6 +9,9 @@ export class OutfitGeneratorService {
 
   async generateRandomOutfit(): Promise<ClosetItem[]> {
     const items = await this.firebaseService.getOutfits();
+    if (!items.length) {
+      return DEFAULT_OUTFITS.map(o => ({ ...o, x: 0, y: 0 }));
+    }
     const categories: Record<string, ClosetItem[]> = {};
 
     for (const item of items) {

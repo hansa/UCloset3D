@@ -52,6 +52,20 @@ npm run start:avatar-api
 
 Then set `openAvatarApiUrl` in `src/environments/environment.ts` to the server
 URL, e.g. `http://localhost:5000`.
+
+### Default outfits
+
+If no clothing items have been uploaded, the application now loads a set of
+placeholder outfit pieces that are embedded directly in the code as base64
+data URIs. This ensures the virtual closet and outfit generator still function
+during demos without needing any binary assets in the repository.
+
+### Default avatar
+
+When a user does not upload a photo or avatar generation fails, the workflow
+continues with a demo avatar located at `src/assets/avatar-default.glb`. This
+allows the rest of the application to be explored without providing an image.
+
 ## Configuration
 
 Add your API keys in `src/environments/environment.ts`:
