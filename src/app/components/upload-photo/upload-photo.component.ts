@@ -49,7 +49,12 @@ export class UploadPhotoComponent {
 
   async generateAvatar() {
     if (!this.selectedFile) {
-      this.error = 'Please select a file first.';
+      // Allow the workflow to continue using a demo avatar
+      this.error = undefined;
+      const avatarUrl = 'assets/avatar-default.glb';
+      this.router.navigate(['/avatar-preview'], {
+        state: { avatarUrl, measurement: { chest: 0, waist: 0, hip: 0 } }
+      });
       return;
     }
     this.loading = true;
@@ -61,7 +66,10 @@ export class UploadPhotoComponent {
       this.router.navigate(['/avatar-preview'], { state: { avatarUrl, measurement: this.measurements } });
 
     } catch (err) {
-      this.error = 'Failed to generate avatar.';
+      // Continue with a fallback avatar so the user can proceed
+      this.error = 'Failed to fully generate avatar. Showing default.';
+      const avatarUrl = 'assets/avatar-default.glb';
+      this.router.navigate(['/avatar-preview'], { state: { avatarUrl, measurement: { chest: 0, waist: 0, hip: 0 } } });
     } finally {
       this.loading = false;
     }

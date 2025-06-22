@@ -6,6 +6,7 @@ import { FirebaseService } from '../../services/firebase.service';
 import { OutfitGeneratorService } from '../../services/outfit-generator.service';
 import { Router } from '@angular/router';
 import { ClosetItem } from '../../models/closet-item';
+import { DEFAULT_OUTFITS } from '../../models/default-outfits';
 
 const LAYER_ORDER: Record<string, number> = {
   shoes: 10,
@@ -58,17 +59,28 @@ export class VirtualClosetComponent implements OnInit {
   async loadPieces(): Promise<void> {
     try {
       const outfits = await this.firebaseService.getOutfits();
+      const items = outfits.length
+        ? outfits.map((o, idx) => ({
+            url: o.imageUrl,
+            category: o.category,
+            x: (idx - outfits.length / 2) * 120,
+            y: 0,
+          }))
+        : DEFAULT_OUTFITS.map((o, idx) => ({
+            ...o,
+            x: (idx - DEFAULT_OUTFITS.length / 2) * 120,
+            y: 0,
+          }));
+      this.pieces = this.assignLayers(items);
+    } catch {
+      this.message = 'Failed to load outfits. Using defaults.';
       this.pieces = this.assignLayers(
-        outfits.map((o, idx) => ({
-          url: o.imageUrl,
-          category: o.category,
-          x: (idx - outfits.length / 2) * 120,
+        DEFAULT_OUTFITS.map((o, idx) => ({
+          ...o,
+          x: (idx - DEFAULT_OUTFITS.length / 2) * 120,
           y: 0,
         }))
       );
-    } catch {
-      this.message = 'Failed to load outfits.';
-      this.pieces = [];
     }
   }
 
