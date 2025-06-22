@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ChallengeService, ChallengeEntry } from '../../services/challenge.service';
 
 @Component({
@@ -9,9 +10,10 @@ import { ChallengeService, ChallengeEntry } from '../../services/challenge.servi
 })
 export class FashionChallengeComponent {
   form: FormGroup;
-  entries$ = this.challengeService.entries$;
+  entries$!: Observable<ChallengeEntry[]>;
 
   constructor(private fb: FormBuilder, private challengeService: ChallengeService) {
+    this.entries$ = this.challengeService.entries$;
     this.form = this.fb.group({
       imageUrl: [''],
       description: ['']
