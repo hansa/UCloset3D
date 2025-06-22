@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="challenge-form">
+  <input type="text" formControlName="imageUrl" placeholder="Image URL" />
+  <input type="text" formControlName="description" placeholder="Description" />
+  <button type="submit">Submit Outfit</button>
+</form>
+
+<ul *ngIf="(entries$ | async)?.length; else empty">
+  <li *ngFor="let entry of entries$ | async" class="entry">
+    <img [src]="entry.imageUrl" alt="outfit" class="thumb" />
+    <p>{{ entry.description }}</p>
+    <div class="rating">
+      <button *ngFor="let r of [1,2,3,4,5]" (click)="rate(entry, r)" [class.active]="entry.rating === r">{{ r }}</button>
+    </div>
+  </li>
+</ul>
+<ng-template #empty>
+  <p>No entries yet.</p>
+</ng-template>
