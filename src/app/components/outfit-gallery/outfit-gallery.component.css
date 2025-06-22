@@ -33,5 +33,5 @@ button {
 }
 
 .error {
-  color: #c00;
+  /* Color handled globally */
 }

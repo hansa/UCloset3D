@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { AvatarService } from '../../services/avatar.service';
 import { FirebaseService } from '../../services/firebase.service';
+import { Router } from '@angular/router';
 
 interface ClosetItem {
   url: string;
@@ -23,8 +24,11 @@ export class VirtualClosetComponent implements OnInit {
   saving = false;
   message?: string;
 
-  constructor(private avatarService: AvatarService,
-              private firebaseService: FirebaseService) {}
+  constructor(
+    private avatarService: AvatarService,
+    private firebaseService: FirebaseService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadAvatar();
@@ -54,6 +58,8 @@ export class VirtualClosetComponent implements OnInit {
         pieces: this.pieces
       });
       this.message = 'Outfit saved.';
+      // Navigate to the gallery so the user can view their outfits
+      this.router.navigate(['/outfit-gallery']);
     } catch {
       this.message = 'Save failed.';
     } finally {

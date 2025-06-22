@@ -19,6 +19,9 @@ export class LoginComponent {
 
   submit() {
     if (this.form.valid) {
+      // In a real app you would authenticate here. We simply navigate
+      // to the next step of the demo workflow.
+
       console.log('Login', this.form.value);
       this.router.navigate(['/upload-photo']);
     }

@@ -17,7 +17,6 @@ img {
 }
 
 .error {
-  color: #c00;
-  margin-top: 0.5rem;
+  /* Color and spacing handled globally */
 }
 

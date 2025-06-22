@@ -5,3 +5,25 @@ body {
   background: #fafafa;
   color: #333;
 }
+
+/* Consistent button styling across the app */
+button {
+  background-color: #324851;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Common error message styling */
+.error {
+  color: #c00;
+  text-align: center;
+  margin-top: 0.5rem;
+}
