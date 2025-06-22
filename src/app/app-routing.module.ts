@@ -10,6 +10,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { MixMatchComponent } from './components/mix-match/mix-match.component';
 import { OutfitGalleryComponent } from './components/outfit-gallery/outfit-gallery.component';
 import { AvatarPreviewComponent } from './components/avatar-preview/avatar-preview.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'virtual-closet', component: VirtualClosetComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'mix-match', component: MixMatchComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
 //   { path: '**', redirectTo: 'upload' }
   { path: '**', redirectTo: 'login' }
