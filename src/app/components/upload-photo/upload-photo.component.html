@@ -1,8 +1,8 @@
 <div class="upload-form">
   <input type="file" (change)="onFileSelected($event)" />
-  <button (click)="removeBackground()" [disabled]="!selectedFile">Process</button>
+  <button (click)="generateAvatar()" [disabled]="!selectedFile || loading">
+    Create Avatar
+  </button>
 </div>
+<div class="loading" *ngIf="loading">Generating avatar...</div>
 <div class="error" *ngIf="error">{{ error }}</div>
-<div *ngIf="processedUrl">
-  <img [src]="processedUrl" alt="Processed" />
-</div>
