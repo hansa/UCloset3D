@@ -1,6 +1,7 @@
 <header>
   <h1>{{ title }}</h1>
   <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
     <a routerLink="/upload" routerLinkActive="active">Upload Photo</a>
     <a routerLink="/avatar" routerLinkActive="active">Avatar View</a>
     <a routerLink="/mix-match" routerLinkActive="active">Mix & Match</a>

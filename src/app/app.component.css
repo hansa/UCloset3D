@@ -10,6 +10,13 @@ header {
   text-align: center;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
 nav a {
   margin: 0 0.5rem;
   color: #fff;
@@ -17,6 +24,10 @@ nav a {
 }
 
 nav a.active {
+  text-decoration: underline;
+}
+
+nav a:hover {
   text-decoration: underline;
 }
 

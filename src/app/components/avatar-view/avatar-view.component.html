@@ -1,5 +1,13 @@
-<div class="avatar-container" *ngIf="avatarUrl">
-  <img [src]="avatarUrl" alt="Avatar" />
+<div class="avatar-wrapper" *ngIf="avatarUrl"
+     (drop)="onDrop($event)"
+     (dragover)="allowDrop($event)"
+     (dragenter)="dragEnter($event)" (dragleave)="dragLeave($event)"
+     [class.drag-over]="dragging">
+  <img [src]="avatarUrl" alt="Avatar" class="base" />
+  <img *ngIf="topUrl" [src]="topUrl" class="top" />
+  <img *ngIf="bottomUrl" [src]="bottomUrl" class="bottom" />
+  <img *ngIf="shoesUrl" [src]="shoesUrl" class="shoes" />
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>
-<div *ngIf="!avatarUrl && !error">Loading avatar...</div>
+<div *ngIf="loading && !error" class="loading">Loading avatar...</div>
+

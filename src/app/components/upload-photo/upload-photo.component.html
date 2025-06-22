@@ -1,8 +1,13 @@
 <div class="upload-form">
   <input type="file" (change)="onFileSelected($event)" />
-  <button (click)="removeBackground()" [disabled]="!selectedFile">Process</button>
+  <select [(ngModel)]="category">
+    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+  </select>
+  <button (click)="removeBackground()" [disabled]="!selectedFile || loading">Process</button>
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>
+<div class="success" *ngIf="success">{{ success }}</div>
+<div *ngIf="loading" class="loading">Processing...</div>
 <div *ngIf="processedUrl">
   <img [src]="processedUrl" alt="Processed" />
 </div>

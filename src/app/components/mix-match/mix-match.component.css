@@ -1,12 +1,39 @@
-ul { list-style: none; padding: 0; }
+
+ul.outfits { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+
 li {
   padding: 0.25rem 0;
   background: #f0f0f0;
   margin-bottom: 0.25rem;
   text-align: center;
+  width: 120px;
+}
+
+li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.25rem;
+
 }
 
 p {
   text-align: center;
   color: #666;
+}
+
+.error {
+  color: #c00;
+}
+
+.wardrobe {
+  text-align: center;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.wardrobe img {
+  width: 60px;
+  cursor: grab;
 }

@@ -1,9 +1,17 @@
 .upload-form {
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+select {
+  padding: 0.25rem;
 }
 
 button {
-  margin-left: 0.5rem;
+  margin-left: 0;
+
 }
 
 img {
@@ -16,3 +24,15 @@ img {
   color: #c00;
   margin-top: 0.5rem;
 }
+
+.success {
+  color: #080;
+  margin-top: 0.5rem;
+}
+
+.loading {
+  margin-top: 0.5rem;
+  color: #555;
+  font-style: italic;
+}
+

@@ -1,1 +1,15 @@
-{ "hosting": { "public": "dist/ucloset3d" } }
+
+{
+  "hosting": {
+    "public": "dist/ucloset3d",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" }
+    ]
+  }
+}
+
