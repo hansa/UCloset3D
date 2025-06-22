@@ -6,6 +6,8 @@ export const environment = {
   bodyBlockApiKey: '',
   // URL of the optional open-source avatar API for production builds
   openAvatarApiUrl: '',
+  deepMotionApiKey: '',
+  deepMotionApiUrl: 'https://api.deepmotion.com/animate',
   firebase: {
     apiKey: "AIzaSyCJcut6NXAuJMCx_Ce7BH8GWuKbkZHyATw",
     authDomain: "ucloset3d.firebaseapp.com",
