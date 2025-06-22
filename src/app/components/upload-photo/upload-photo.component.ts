@@ -27,6 +27,18 @@ export class UploadPhotoComponent {
     private router: Router
   ) {}
 
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    const files = event.dataTransfer?.files;
+    if (files && files.length) {
+      this.selectedFile = files[0];
+    }
+  }
+
   onFileSelected(event: Event) {
     const element = event.target as HTMLInputElement;
     const file = element.files && element.files[0];

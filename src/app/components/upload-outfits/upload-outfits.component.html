@@ -7,6 +7,13 @@
     </select>
   </label>
   <input type="file" multiple (change)="onFilesSelected($event)" />
+  <div
+    class="drop-zone"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event)"
+  >
+    Drop outfit images here
+  </div>
   <button (click)="uploadAll()" [disabled]="!selectedFiles.length || isUploading">
     Save
   </button>

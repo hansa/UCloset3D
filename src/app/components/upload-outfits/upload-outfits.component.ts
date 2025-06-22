@@ -23,6 +23,18 @@ export class UploadOutfitsComponent {
     private router: Router
   ) {}
 
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    const files = event.dataTransfer?.files;
+    if (files) {
+      this.selectedFiles = Array.from(files);
+    }
+  }
+
   onFilesSelected(event: Event) {
     const files = (event.target as HTMLInputElement).files;
     if (files) {

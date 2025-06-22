@@ -63,7 +63,7 @@ Deploying to Firebase requires a valid Firebase project configuration. Ensure `f
 The login screen uses Firebase Authentication with email and password credentials. You can create an account using the new **Sign Up** page at `/signup` and then sign in with those credentials. Upon success you will be taken to the photo upload page.
 
 The UI provides the following pages:
-1. **Upload Photo** – process an image with background removal.
+1. **Upload Photo** – process an image with background removal. Drag and drop or select a file to begin.
 2. **Avatar Preview** – display the generated avatar with an option to continue.
 3. **Avatar View** – preview a Ready Player Me avatar.
 4. **Mix & Match** – list outfit items in a simple mix and match interface.
@@ -73,7 +73,7 @@ The UI provides the following pages:
 
 1. **Login** – authenticate with a demo account.
 2. **Avatar Generation** – create a personalized Ready Player Me avatar and collect measurements using BodyBlock.
-3. **Outfit Uploads** – add clothing images and automatically remove the background.
+3. **Outfit Uploads** – add clothing images with drag-and-drop support and automatically remove the background.
 4. **Virtual Closet** – manage wardrobe items with drag‑and‑drop sorting.
 5. **Mix & Match** – arrange outfits using pieces from the virtual closet.
 6. **Gallery Sharing** – publish completed looks to a shareable gallery page.

@@ -1,5 +1,12 @@
 <div class="upload-form">
   <input type="file" (change)="onFileSelected($event)" />
+  <div
+    class="drop-zone"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event)"
+  >
+    Drop photo here
+  </div>
   <button (click)="generateAvatar()" [disabled]="!selectedFile || loading">
     Create Avatar
   </button>
