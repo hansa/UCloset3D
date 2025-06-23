@@ -1,0 +1,6 @@
+<h2>Scan Barcode</h2>
+<input type="file" accept="image/*" (change)="onFileSelected($event)">
+<button (click)="scan()" [disabled]="loading || !selectedFile">Scan</button>
+<div *ngIf="loading">Scanning...</div>
+<div *ngIf="result">Result: {{ result }}</div>
+<div class="error" *ngIf="error">{{ error }}</div>

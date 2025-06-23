@@ -85,7 +85,7 @@ export const environment = {
   production: false,
   readyPlayerMeApiKey: 'YOUR_READY_PLAYER_ME_API_KEY',
   removeBgApiKey: 'YOUR_REMOVE_BG_API_KEY',
-  barcodeApiKey: 'YOUR_BARCODE_API_KEY',
+  scanditLicenseKey: 'YOUR_SCANDIT_LICENSE_KEY',
   bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
   openAvatarApiUrl: '',
   // Optional SayMotion REST API configuration

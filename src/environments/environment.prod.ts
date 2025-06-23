@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   readyPlayerMeApiKey: '',
   removeBgApiKey: '',
-  barcodeApiKey: '',
+  scanditLicenseKey: '',
   bodyBlockApiKey: '',
   // URL of the optional open-source avatar API for production builds
   openAvatarApiUrl: '',
