@@ -12,7 +12,7 @@ export class BarcodeService {
     formData.append('image', image);
 
     const headers = new HttpHeaders({
-      Authorization: `Token ${environment.barcodeApiKey}`
+      Authorization: `Token ${environment.scanditLicenseKey}`
     });
 
     const response = await firstValueFrom(

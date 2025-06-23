@@ -23,6 +23,7 @@ import { FashionChallengeComponent } from './components/fashion-challenge/fashio
 import { MotionGeneratorComponent } from './components/motion-generator/motion-generator.component';
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
 import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
+import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-
     MotionGeneratorComponent,
     AnimateVideoComponent,
     MetahumanVideoComponent,
+    BarcodeScanComponent,
   ],
   imports: [
     BrowserModule,
