@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class UploadOutfitsComponent {
-  categories = ['Hat', 'Shirt', 'Pants', 'Shoes'];
+  categories = ['Hat', 'Top', 'Shirt', 'Pants', 'Skirt', 'Shoes'];
   selectedCategory = this.categories[0];
   selectedFiles: File[] = [];
   uploadedUrls: string[] = [];

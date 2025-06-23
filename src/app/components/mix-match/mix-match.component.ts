@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mix-match.component.scss']
 })
 export class MixMatchComponent {
-  outfits: string[] = ['Hat', 'Shirt', 'Pants', 'Shoes'];
+  outfits: string[] = ['Hat', 'Top', 'Shirt', 'Pants', 'Skirt', 'Shoes'];
 }
