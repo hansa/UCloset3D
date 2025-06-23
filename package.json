@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:avatar-api": "python backend/avatar_api.py"
+    "start:avatar-api": "python -m backend.avatar_api"
   },
   "dependencies": {
     "@angular/animations": "~17.0.0",
