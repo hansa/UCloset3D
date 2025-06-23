@@ -50,6 +50,13 @@ pip install -r backend/requirements.txt
 npm run start:avatar-api
 ```
 
+#### Digitizing an image into 3D
+
+The backend now includes a script `backend/digitize_avatar.py` that runs the
+[PIFuHD](https://github.com/facebookresearch/pifuhd) pipeline. An additional
+endpoint `/digitize-avatar` accepts an uploaded image and returns a reconstructed
+OBJ file. Running this requires PyTorch and may take several minutes on CPU.
+
 Then set `openAvatarApiUrl` in `src/environments/environment.ts` to the server
 URL, e.g. `http://localhost:5000`.
 
