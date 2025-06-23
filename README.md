@@ -152,3 +152,33 @@ Example outfit images are stored inline as base64 data URIs in
 
 Navigate between pages using the links in the header. The Angular router loads each feature on its own route.
 
+## Running on iOS and Android
+
+This project can be packaged as a native mobile application using [Capacitor](https://capacitorjs.com/).
+
+1. Install the Capacitor CLI:
+   ```bash
+   npm install
+   ```
+2. Initialize Capacitor (only once):
+   ```bash
+   npx cap init ucloset3d com.example.ucloset3d
+   ```
+3. Add the platforms:
+   ```bash
+   npx cap add ios
+   npx cap add android
+   ```
+4. Build the Angular project and copy the files:
+   ```bash
+   npm run build
+   npx cap copy
+   ```
+5. Open the native IDE to run the app on a device or simulator:
+   ```bash
+   npx cap open ios    # for Xcode
+   npx cap open android  # for Android Studio
+   ```
+
+The generated `ios/` and `android/` folders are ignored by Git and can be rebuilt at any time using the commands above.
+
