@@ -16,14 +16,14 @@ def run_pifuhd(image_path: str, out_dir: str):
             'wget', 'https://dl.fbaipublicfiles.com/pifuhd/checkpoints/pifuhd.pt',
             '-O', ckpt
         ])
-    script = os.path.join(repo_dir, 'apps', 'eval.py')
+    script = os.path.join(repo_dir, 'apps', 'simple_test.py')
     subprocess.check_call([
         'python', script,
-        '--dataroot', image_path,
-        '--results_path', out_dir,
+        '--input_path', image_path,
+        '--output_path', out_dir,
         '--loadSize', '512',
         '--load_netMR_checkpoint_path', ckpt,
-        '--load_netG_checkpoint_path', ckpt
+        '--load_netG_checkpoint_path', ckpt,
     ])
 
 if __name__ == '__main__':
