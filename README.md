@@ -38,8 +38,10 @@ firebase deploy
 ### Optional open-source avatar server
 
 The project can generate avatars locally using open-source tools. A small Flask
-server is provided in `backend/` as a starting point. It returns a demo avatar
-and sample measurements but can be extended with projects like
+server is provided in `backend/` that now runs the
+[PIFuHD](https://github.com/facebookresearch/pifuhd) pipeline to build a 3D
+model from a single photo. The server also returns mock measurements but can be
+extended with projects like
 [SMPL-Anthropometry](https://github.com/sergeyprokudin/smpl-anthropometry) or
 [3d-body-measurements](https://github.com/korrair/3d-body-measurements).
 
@@ -52,10 +54,11 @@ npm run start:avatar-api
 
 #### Digitizing an image into 3D
 
-The backend now includes a script `backend/digitize_avatar.py` that runs the
-[PIFuHD](https://github.com/facebookresearch/pifuhd) pipeline. An additional
-endpoint `/digitize-avatar` accepts an uploaded image and returns a reconstructed
-OBJ file. Running this requires PyTorch and may take several minutes on CPU.
+The backend uses the script `backend/digitize_avatar.py` to run the
+[PIFuHD](https://github.com/facebookresearch/pifuhd) pipeline. The
+`/generate-avatar` endpoint accepts an uploaded image and returns a reconstructed
+GLB file, while `/digitize-avatar` exposes the raw OBJ result. Running this
+requires PyTorch and may take several minutes on CPU.
 
 Then set `openAvatarApiUrl` in `src/environments/environment.ts` to the server
 URL, e.g. `http://localhost:5000`.
