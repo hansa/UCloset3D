@@ -1,2 +1,10 @@
 flask
 numpy
+torch
+torchvision
+Pillow
+scikit-image
+tqdm
+opencv-python
+trimesh
+PyOpenGL
