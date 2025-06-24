@@ -9,6 +9,8 @@ export const environment = {
   // Configuration for the Fashn.ai virtual try-on API
   fashnApiKey: '',
   fashnApiUrl: 'https://api.fashn.ai/v1',
+  // Base URL for the Awesome Virtual Try-On server
+  awesomeVtonApiUrl: '',
   // Base URL and credentials for the optional SayMotion API integration
   sayMotionBaseUrl: '',
   sayMotionClientId: '',

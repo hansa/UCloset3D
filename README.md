@@ -91,6 +91,8 @@ export const environment = {
   // Fashn.ai virtual try-on configuration
   fashnApiKey: 'YOUR_FASHN_API_KEY',
   fashnApiUrl: 'https://api.fashn.ai/v1',
+  // Optional Awesome-VTON server for mix & match
+  awesomeVtonApiUrl: '',
   // Optional SayMotion REST API configuration
   sayMotionBaseUrl: '',
   sayMotionClientId: '',
@@ -128,6 +130,21 @@ async preview() {
     }
   );
   console.log(result);
+}
+```
+
+### Mix & Match with Awesome VTON
+
+This project can call the [DOC-VTON](https://github.com/JyChen9811/DOC-VTON) implementation of "Awesome Virtual Try-On." Run the server from that repository separately and set `awesomeVtonApiUrl` in `src/environments/environment.ts` to its base URL.
+
+```ts
+import { AwesomeVtonService } from './services/awesome-vton.service';
+
+constructor(private awesome: AwesomeVtonService) {}
+
+async generate() {
+  const url = await this.awesome.tryOnFiles(modelFile, garmentFile, 'tops');
+  console.log(url);
 }
 ```
 

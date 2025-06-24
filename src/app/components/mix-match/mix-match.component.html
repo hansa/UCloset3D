@@ -1,6 +1,14 @@
-<ul *ngIf="outfits.length; else empty">
-  <li *ngFor="let item of outfits">{{ item }}</li>
-</ul>
-<ng-template #empty>
-  <p>No outfits available.</p>
-</ng-template>
+<div class="uploader">
+  <label>
+    Model image
+    <input type="file" (change)="onFileSelected($event, 'model')" />
+  </label>
+  <label>
+    Garment image
+    <input type="file" (change)="onFileSelected($event, 'garment')" />
+  </label>
+  <button (click)="tryOn()" [disabled]="loading">Try On</button>
+</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+<img *ngIf="resultUrl" [src]="resultUrl" alt="Result" />
