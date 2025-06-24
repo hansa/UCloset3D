@@ -24,4 +24,14 @@ export class FirebaseService {
     const snapshot = await getDocs(collection(this.db, 'outfits'));
     return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
   }
+
+  async saveLook(data: any): Promise<void> {
+    await addDoc(collection(this.db, 'savedLooks'), data);
+  }
+
+  async getSavedLooks(): Promise<any[]> {
+    const snapshot = await getDocs(collection(this.db, 'savedLooks'));
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+  }
 }
+

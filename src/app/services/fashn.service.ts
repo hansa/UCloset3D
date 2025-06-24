@@ -19,6 +19,36 @@ export interface TryOnOptions {
 export class FashnService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Upload raw image files to the Fashn API for virtual try-on.
+   * Returns the API response which typically includes an output_image_url.
+   */
+  async tryOnFiles(
+    modelFile: File,
+    garmentFile: File,
+    category: string,
+    options: Record<string, any> = {}
+  ): Promise<any> {
+    const { fashnApiKey, fashnApiUrl } = environment;
+    if (!fashnApiKey || fashnApiKey.includes('YOUR_FASHN_API_KEY')) {
+      throw new Error('Fashn API key not configured');
+    }
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${fashnApiKey}`,
+    });
+
+    const formData = new FormData();
+    formData.append('model_image', modelFile);
+    formData.append('garment_image', garmentFile);
+    formData.append('category', category);
+    Object.entries(options).forEach(([k, v]) => formData.append(k, v as any));
+
+    return firstValueFrom(
+      this.http.post<any>(`${fashnApiUrl}/run`, formData, { headers })
+    );
+  }
+
   async tryOn(modelImage: string, garmentImage: string, category: string, options: TryOnOptions = {}): Promise<any> {
     const { fashnApiKey, fashnApiUrl } = environment;
     if (!fashnApiKey || fashnApiKey.includes('YOUR_FASHN_API_KEY')) {

@@ -66,7 +66,7 @@ export class UploadOutfitsComponent {
     }
     this.isUploading = false;
     if (!this.error) {
-      this.router.navigate(['/virtual-closet']);
+      this.router.navigate(['/try-on']);
     }
   }
 }
