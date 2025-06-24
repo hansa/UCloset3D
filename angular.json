@@ -51,5 +51,8 @@
       }
     }
   },
-  "defaultProject": "ucloset3d"
+  "defaultProject": "ucloset3d",
+  "cli": {
+    "analytics": false
+  }
 }
