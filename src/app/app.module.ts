@@ -25,6 +25,7 @@ import { AnimateVideoComponent } from './components/animate-video/animate-video.
 import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.component';
 import { FashnTryOnComponent } from './components/fashn-try-on/fashn-try-on.component';
+import { WardrobeComponent } from './components/wardrobe/wardrobe.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FashnTryOnComponent } from './components/fashn-try-on/fashn-try-on.comp
     MetahumanVideoComponent,
     BarcodeScanComponent,
     FashnTryOnComponent,
+    WardrobeComponent,
   ],
   imports: [
     BrowserModule,

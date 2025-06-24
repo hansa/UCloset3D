@@ -1,0 +1,10 @@
+<div class="wardrobe">
+  <h2>Your Wardrobe</h2>
+  <div *ngIf="!items.length">No items added yet.</div>
+  <ul>
+    <li *ngFor="let item of items">
+      <img *ngIf="item.picture" [src]="item.picture" alt="item" />
+      <span>{{ item.type }} - {{ item.color }}</span>
+    </li>
+  </ul>
+</div>
