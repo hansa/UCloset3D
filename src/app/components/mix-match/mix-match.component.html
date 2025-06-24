@@ -1,6 +1,10 @@
-<ul *ngIf="outfits.length; else empty">
-  <li *ngFor="let item of outfits">{{ item }}</li>
-</ul>
+<button (click)="generate()" [disabled]="loading">Generate</button>
+<p *ngIf="error" class="error">{{ error }}</p>
+<div *ngFor="let outfit of combinations" class="outfit">
+  <div *ngFor="let item of outfit" class="piece">
+    <img [src]="item.url" [alt]="item.category" />
+  </div>
+</div>
 <ng-template #empty>
   <p>No outfits available.</p>
 </ng-template>
