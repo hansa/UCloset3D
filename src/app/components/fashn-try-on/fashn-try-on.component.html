@@ -1,12 +1,23 @@
 <div class="try-on-form">
-  <input type="file" (change)="onFileSelected($event, 'person')" />
-  <input type="file" (change)="onFileSelected($event, 'garment')" />
+  <label>
+    Model Image
+    <input type="file" (change)="onFileSelected($event, 'person')" />
+  </label>
+  <label>
+    Garment Image
+    <input type="file" (change)="onFileSelected($event, 'garment')" />
+  </label>
   <button (click)="tryOnClothing()" [disabled]="loading">Try On This Look</button>
   <div class="loading" *ngIf="loading">Processing...</div>
   <div class="error" *ngIf="error">{{ error }}</div>
 </div>
 
+<div class="preview" *ngIf="personPreview || garmentPreview">
+  <img *ngIf="personPreview" [src]="personPreview" alt="Person" />
+  <img *ngIf="garmentPreview" [src]="garmentPreview" alt="Garment" />
+</div>
+
 <img *ngIf="tryOnResult" [src]="tryOnResult" alt="Try-On Result" />
-<a *ngIf="tryOnResult" [href]="'https://www.instagram.com/sharing-url?image=' + tryOnResult" target="_blank">
-  Share on Instagram
-</a>
+<a *ngIf="tryOnResult" [href]="'https://www.instagram.com/sharing-url?image=' + tryOnResult" target="_blank">Share on Instagram</a>
+<button *ngIf="tryOnResult" (click)="next()">Next</button>
+

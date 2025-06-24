@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RemoveBgService } from '../../services/removebg.service';
 import { AvatarService } from '../../services/avatar.service';
 import { BodyBlockService } from '../../services/bodyblock.service';
+import { PersonImageService } from '../../services/person-image.service';
 
 @Component({
   selector: 'app-upload-photo',
@@ -24,6 +25,7 @@ export class UploadPhotoComponent {
     private avatarService: AvatarService,
     private removeBgService: RemoveBgService,
     private bodyBlockService: BodyBlockService,
+    private personImage: PersonImageService,
     private router: Router
   ) {}
 
@@ -36,6 +38,7 @@ export class UploadPhotoComponent {
     const files = event.dataTransfer?.files;
     if (files && files.length) {
       this.selectedFile = files[0];
+      this.personImage.setImage(this.selectedFile);
     }
   }
 
@@ -44,6 +47,7 @@ export class UploadPhotoComponent {
     const file = element.files && element.files[0];
     if (file) {
       this.selectedFile = file;
+      this.personImage.setImage(file);
     }
   }
 

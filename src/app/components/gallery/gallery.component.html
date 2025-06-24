@@ -1,1 +1,11 @@
-<p>Gallery works!</p>
+<div class="gallery" *ngIf="looks.length; else empty">
+  <div class="card" *ngFor="let look of looks">
+    <img [src]="look.lookImage" alt="Look" />
+    <button (click)="share(look)">Share</button>
+  </div>
+</div>
+<ng-template #empty>
+  <p>No looks saved.</p>
+</ng-template>
+<div class="error" *ngIf="error">{{ error }}</div>
+

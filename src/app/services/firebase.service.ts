@@ -28,4 +28,10 @@ export class FirebaseService {
   async saveLook(data: any): Promise<void> {
     await addDoc(collection(this.db, 'savedLooks'), data);
   }
+
+  async getSavedLooks(): Promise<any[]> {
+    const snapshot = await getDocs(collection(this.db, 'savedLooks'));
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+  }
 }
+
