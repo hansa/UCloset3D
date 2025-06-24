@@ -163,6 +163,14 @@ Example outfit images are stored inline as base64 data URIs in
 `src/app/models/default-outfits.ts`. This avoids keeping `.png` files in
 `src/assets/outfits`.
 
+## Wardrobe model
+
+The application now includes a simple wardrobe service inspired by the
+[Fashion Deck](https://github.com/TheMisterPin/fashion-deck) project. Core
+clothing enums like `ClothingType` and `Color` are defined in
+`src/app/models/fashion.models.ts` and can be used throughout the app for
+consistent wardrobe data.
+
 ## Development
 
 1. Install dependencies

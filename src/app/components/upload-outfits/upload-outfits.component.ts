@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClothingType } from '../../models/fashion.models';
 import { RemoveBgService } from '../../services/removebg.service';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router } from '@angular/router';
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class UploadOutfitsComponent {
-  categories = ['Hat', 'Top', 'Shirt', 'Pants', 'Skirt', 'Shoes'];
+  categories = Object.values(ClothingType);
   selectedCategory = this.categories[0];
   selectedFiles: File[] = [];
   uploadedUrls: string[] = [];

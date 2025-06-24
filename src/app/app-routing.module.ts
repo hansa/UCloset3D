@@ -18,6 +18,7 @@ import { AnimateVideoComponent } from './components/animate-video/animate-video.
 import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.component';
 import { FashnTryOnComponent } from './components/fashn-try-on/fashn-try-on.component';
+import { WardrobeComponent } from './components/wardrobe/wardrobe.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'outfit-gallery', component: OutfitGalleryComponent },
+  { path: 'wardrobe', component: WardrobeComponent },
   { path: 'animate', component: AnimateVideoComponent },
   { path: 'metahuman-video', component: MetahumanVideoComponent },
   { path: 'barcode-scan', component: BarcodeScanComponent },
