@@ -6,6 +6,9 @@ export const environment = {
   bodyBlockApiKey: '',
   // URL of the optional open-source avatar API for production builds
   openAvatarApiUrl: '',
+  // Configuration for the Fashn.ai virtual try-on API
+  fashnApiKey: '',
+  fashnApiUrl: 'https://api.fashn.ai/v1',
   // Base URL and credentials for the optional SayMotion API integration
   sayMotionBaseUrl: '',
   sayMotionClientId: '',

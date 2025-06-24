@@ -8,6 +8,9 @@ export const environment = {
   // will generate avatars and measurements locally instead of using paid
   // services like Ready Player Me or BodyBlock.
   openAvatarApiUrl: '',
+  // Configuration for the Fashn.ai virtual try-on API
+  fashnApiKey: 'YOUR_FASHN_API_KEY',
+  fashnApiUrl: 'https://api.fashn.ai/v1',
   // Base URL and credentials for the optional SayMotion API integration
   sayMotionBaseUrl: '',
   sayMotionClientId: '',

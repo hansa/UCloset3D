@@ -88,6 +88,9 @@ export const environment = {
   scanditLicenseKey: 'YOUR_SCANDIT_LICENSE_KEY',
   bodyBlockApiKey: 'YOUR_BODYBLOCK_API_KEY',
   openAvatarApiUrl: '',
+  // Fashn.ai virtual try-on configuration
+  fashnApiKey: 'YOUR_FASHN_API_KEY',
+  fashnApiUrl: 'https://api.fashn.ai/v1',
   // Optional SayMotion REST API configuration
   sayMotionBaseUrl: '',
   sayMotionClientId: '',
@@ -101,6 +104,21 @@ export const environment = {
     appId: 'YOUR_FIREBASE_APP_ID'
   }
 };
+```
+
+### Virtual try-on with Fashn.ai
+
+Add your Fashn API key and base URL to the environment configuration as shown above. The provided `FashnService` wraps the `/run` and `/status` endpoints and polls until the job completes.
+
+```ts
+import { FashnService } from './services/fashn.service';
+
+constructor(private fashn: FashnService) {}
+
+async preview() {
+  const result = await this.fashn.tryOn('model.jpg', 'garment.jpg', 'tops');
+  console.log(result);
+}
 ```
 
 Deploying to Firebase requires a valid Firebase project configuration. Ensure `firebase.json` has `"public": "dist/ucloset3d"` to match the Angular build output.
