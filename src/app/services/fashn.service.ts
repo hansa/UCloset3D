@@ -3,11 +3,23 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+export interface TryOnOptions {
+  /** Processing mode such as "standard" or "high_fidelity" */
+  mode?: string;
+  /** Type of garment photo, e.g. "flat" or "model" */
+  garment_photo_type?: string;
+  /** Number of samples the API should generate */
+  num_samples?: number;
+  /** Seed for deterministic output */
+  seed?: number;
+  [key: string]: any;
+}
+
 @Injectable({ providedIn: 'root' })
 export class FashnService {
   constructor(private http: HttpClient) {}
 
-  async tryOn(modelImage: string, garmentImage: string, category: string): Promise<any> {
+  async tryOn(modelImage: string, garmentImage: string, category: string, options: TryOnOptions = {}): Promise<any> {
     const { fashnApiKey, fashnApiUrl } = environment;
     if (!fashnApiKey || fashnApiKey.includes('YOUR_FASHN_API_KEY')) {
       throw new Error('Fashn API key not configured');
@@ -18,11 +30,15 @@ export class FashnService {
       Authorization: `Bearer ${fashnApiKey}`,
     });
 
+    const payload = {
+      model_image: modelImage,
+      garment_image: garmentImage,
+      category,
+      ...options,
+    };
+
     const runResp = await firstValueFrom(
-      this.http.post<{ id: string }>(`${fashnApiUrl}/run`,
-        { model_image: modelImage, garment_image: garmentImage, category },
-        { headers }
-      )
+      this.http.post<{ id: string }>(`${fashnApiUrl}/run`, payload, { headers })
     );
 
     while (true) {

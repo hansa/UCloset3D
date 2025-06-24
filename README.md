@@ -108,7 +108,7 @@ export const environment = {
 
 ### Virtual try-on with Fashn.ai
 
-Add your Fashn API key and base URL to the environment configuration as shown above. The provided `FashnService` wraps the `/run` and `/status` endpoints and polls until the job completes.
+Add your Fashn API key and base URL to the environment configuration as shown above. The provided `FashnService` wraps the `/run` and `/status` endpoints and polls until the job completes. You may supply optional parameters such as `mode`, `garment_photo_type`, `num_samples` and `seed` via the final argument.
 
 ```ts
 import { FashnService } from './services/fashn.service';
@@ -116,7 +116,17 @@ import { FashnService } from './services/fashn.service';
 constructor(private fashn: FashnService) {}
 
 async preview() {
-  const result = await this.fashn.tryOn('model.jpg', 'garment.jpg', 'tops');
+  const result = await this.fashn.tryOn(
+    'model.jpg',
+    'garment.jpg',
+    'tops',
+    {
+      mode: 'standard',
+      garment_photo_type: 'flat',
+      num_samples: 3,
+      seed: 42,
+    }
+  );
   console.log(result);
 }
 ```
