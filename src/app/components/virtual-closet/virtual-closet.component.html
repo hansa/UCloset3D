@@ -11,7 +11,11 @@
     cdkDrag
     [cdkDragFreeDragPosition]="{x: piece.x, y: piece.y}"
     (cdkDragEnded)="onDragEnd($event, piece)"
+    (dblclick)="preview(piece)"
   />
+</div>
+<div class="preview" *ngIf="previewUrl">
+  <img [src]="previewUrl" alt="Try-on Preview" />
 </div>
 <button class="save" (click)="save()" [disabled]="saving">Save Outfit</button>
 <button class="generate" (click)="generate()">Generate Outfit</button>

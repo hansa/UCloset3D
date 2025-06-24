@@ -4,6 +4,7 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { AvatarService } from '../../services/avatar.service';
 import { FirebaseService } from '../../services/firebase.service';
 import { OutfitGeneratorService } from '../../services/outfit-generator.service';
+import { FashnService } from '../../services/fashn.service';
 import { Router } from '@angular/router';
 import { ClosetItem } from '../../models/closet-item';
 import { DEFAULT_OUTFITS } from '../../models/default-outfits';
@@ -32,6 +33,7 @@ export class VirtualClosetComponent implements OnInit {
   pieces: ClosetItem[] = [];
   saving = false;
   message?: string;
+  previewUrl?: string;
 
   private assignLayers(items: ClosetItem[]): ClosetItem[] {
     return items.map(i => ({
@@ -44,6 +46,7 @@ export class VirtualClosetComponent implements OnInit {
     private avatarService: AvatarService,
     private firebaseService: FirebaseService,
     private outfitGenerator: OutfitGeneratorService,
+    private fashn: FashnService,
     private router: Router
   ) {}
 
@@ -99,6 +102,24 @@ export class VirtualClosetComponent implements OnInit {
     const pos = event.source.getFreeDragPosition();
     piece.x = pos.x;
     piece.y = pos.y;
+  }
+
+  async preview(piece: ClosetItem) {
+    if (!this.avatarUrl) {
+      this.message = 'No avatar available for try-on.';
+      return;
+    }
+    this.message = 'Generating preview...';
+    try {
+      this.previewUrl = await this.fashn.tryOn(
+        this.avatarUrl,
+        piece.url,
+        piece.category || 'top'
+      );
+      this.message = undefined;
+    } catch {
+      this.message = 'Virtual try-on failed.';
+    }
   }
 
   async save() {

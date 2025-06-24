@@ -107,19 +107,7 @@ export const environment = {
 ```
 
 ### Virtual try-on with Fashn.ai
-
-Add your Fashn API key and base URL to the environment configuration as shown above. The provided `FashnService` wraps the `/run` and `/status` endpoints and polls until the job completes.
-
-```ts
-import { FashnService } from './services/fashn.service';
-
-constructor(private fashn: FashnService) {}
-
-async preview() {
-  const result = await this.fashn.tryOn('model.jpg', 'garment.jpg', 'tops');
-  console.log(result);
-}
-```
+Add your Fashn API key and base URL to the environment configuration as shown above. The `VirtualClosetComponent` now injects `FashnService` so you can preview outfits on demand. Double‑click any clothing item in the virtual closet to send the model and garment to Fashn.ai. The resulting image is displayed below the closet when ready.
 
 Deploying to Firebase requires a valid Firebase project configuration. Ensure `firebase.json` has `"public": "dist/ucloset3d"` to match the Angular build output.
 
