@@ -24,6 +24,7 @@ import { MotionGeneratorComponent } from './components/motion-generator/motion-g
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
 import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.component';
+import { FashnTryOnComponent } from './components/fashn-try-on/fashn-try-on.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.com
     AnimateVideoComponent,
     MetahumanVideoComponent,
     BarcodeScanComponent,
+    FashnTryOnComponent,
   ],
   imports: [
     BrowserModule,

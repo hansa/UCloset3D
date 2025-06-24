@@ -1,0 +1,14 @@
+.try-on-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.loading {
+  color: blue;
+}
+
+.error {
+  color: red;
+}

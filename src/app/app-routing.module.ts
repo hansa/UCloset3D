@@ -17,6 +17,7 @@ import { MotionGeneratorComponent } from './components/motion-generator/motion-g
 import { AnimateVideoComponent } from './components/animate-video/animate-video.component';
 import { MetahumanVideoComponent } from './components/metahuman-video/metahuman-video.component';
 import { BarcodeScanComponent } from './components/barcode-scan/barcode-scan.component';
+import { FashnTryOnComponent } from './components/fashn-try-on/fashn-try-on.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'metahuman-video', component: MetahumanVideoComponent },
   { path: 'barcode-scan', component: BarcodeScanComponent },
   { path: 'challenge', component: FashionChallengeComponent },
+  { path: 'try-on', component: FashnTryOnComponent },
   { path: 'motion-generator', component: MotionGeneratorComponent },
 //   { path: '**', redirectTo: 'upload' }
   { path: '**', redirectTo: 'login' }
