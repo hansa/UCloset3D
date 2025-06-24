@@ -1,0 +1,12 @@
+<div class="model-container">
+  <img class="base" [src]="baseImage" alt="Model" />
+  <img
+    *ngFor="let piece of pieces"
+    class="piece"
+    [src]="piece.url"
+    cdkDrag
+    [style.z-index]="piece.layer"
+    [cdkDragFreeDragPosition]="{x: piece.x, y: piece.y}"
+    (cdkDragEnded)="onDragEnd($event, piece)"
+  />
+</div>
