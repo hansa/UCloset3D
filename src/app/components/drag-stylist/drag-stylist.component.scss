@@ -1,0 +1,13 @@
+.stylist {
+  display: flex;
+  gap: 1rem;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.blockly-wrapper {
+  margin-top: 1rem;
+  height: 200px;
+}

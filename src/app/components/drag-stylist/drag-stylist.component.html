@@ -1,0 +1,9 @@
+<div class="stylist">
+  <div class="items">
+    <img *ngFor="let piece of items" [src]="piece.url" cdkDrag (cdkDragEnded)="onDragEnd($event, piece)" width="60" />
+  </div>
+  <canvas #canvas width="300" height="400"></canvas>
+</div>
+<div class="blockly-wrapper" #blockly></div>
+<button (click)="runCode()">Run Program</button>
+

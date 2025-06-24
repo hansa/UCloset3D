@@ -24,7 +24,8 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0",
-    "@capacitor/core": "^5.0.4"
+    "@capacitor/core": "^5.0.4",
+    "blockly": "^12.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~17.0.0",
